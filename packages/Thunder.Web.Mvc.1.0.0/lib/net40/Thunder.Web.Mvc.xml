@@ -1,0 +1,1238 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Thunder.Web.Mvc</name>
+    </assembly>
+    <members>
+        <member name="T:Thunder.Web.Mvc.HardCode">
+            <summary>
+            Hard code
+            </summary>
+        </member>
+        <member name="T:Thunder.Web.Mvc.HardCode.Session">
+            <summary>
+            Session
+            </summary>
+        </member>
+        <member name="F:Thunder.Web.Mvc.HardCode.Session.Message">
+            <summary>
+            Message
+            </summary>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Html.Design.ImageExtensions">
+            <summary>
+             Image extensions
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ImageExtensions.Image(System.Web.Mvc.HtmlHelper,System.String,System.Object)">
+            <summary>
+             Image
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="path">Path</param>
+            <param name="htmlAttributes">Html attributes</param>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ImageExtensions.Image(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Image
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="path">Path</param>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ImageExtensions.Png(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Png image
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="path">Path</param>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ImageExtensions.Png(System.Web.Mvc.HtmlHelper,System.String,System.Object)">
+            <summary>
+            Png Image
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="path">Path</param>
+            <param name="htmlAttributes">Html attributes</param>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ImageExtensions.Gif(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Gif image
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="path">Path</param>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ImageExtensions.Gif(System.Web.Mvc.HtmlHelper,System.String,System.Object)">
+            <summary>
+            Gif Image
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="path">Path</param>
+            <param name="htmlAttributes">Html attributes</param>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ImageExtensions.Jpg(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Jpg image
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="path">Path</param>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ImageExtensions.Jpg(System.Web.Mvc.HtmlHelper,System.String,System.Object)">
+            <summary>
+            Jpg Image
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="path">Path</param>
+            <param name="htmlAttributes">Html attributes</param>
+            <returns></returns>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Html.Design.ContentBoxHeaderButton">
+            <summary>
+            Content box tab
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ContentBoxHeaderButton.#ctor">
+            <summary>
+            Initialize new instance of <see cref="T:Thunder.Web.Mvc.Html.Design.ContentBoxHeaderButton"/>.
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.Html.Design.ContentBoxHeaderButton.Text">
+            <summary>
+            Get or set text
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.Html.Design.ContentBoxHeaderButton.Title">
+            <summary>
+            Get or set title
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.Html.Design.ContentBoxHeaderButton.Url">
+            <summary>
+            Get or set url
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.Html.Design.ContentBoxHeaderButton.Class">
+            <summary>
+            Get or set class
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.Html.Design.ContentBoxHeaderButton.HtmlAttributes">
+            <summary>
+            Get or set html attributes
+            </summary>
+        </member>
+        <member name="T:Thunder.Web.Mvc.CompressAttribute">
+            <summary>
+            Compress filter attribute based post http://weblogs.asp.net/rashid/archive/2008/03/28/asp-net-mvc-action-filter-caching-and-compression.aspx.
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.CompressAttribute.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)">
+            <summary>
+            On action executing
+            </summary>
+            <param name="filterContext">Action executing context</param>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Html.Design.LabelExtensions">
+            <summary>
+            Label extensions
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.LabelExtensions.Label(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Boolean)">
+            <summary>
+             Label
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="expression">Expression</param>
+            <param name="labelText">Label text</param>
+            <param name="required">Required</param>
+            <returns>Label tag</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.LabelExtensions.Label(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Boolean,System.Object)">
+            <summary>
+            Label
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="expression">Expression</param>
+            <param name="labelText">Label text</param>
+            <param name="required">Required</param>
+            <param name="htmlAttributes">Html attributes</param>
+            <returns></returns>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Html.Design.TextBoxExtensions">
+            <summary>
+            Text box extensions
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.TextBoxExtensions.TextBox(System.Web.Mvc.HtmlHelper,System.String,System.Int32,Thunder.Web.Mvc.Html.Design.WidthStyle)">
+            <summary>
+            TextBox
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="maxLength">Maxlength</param>
+            <param name="widthStyle">Width style</param>
+            <returns>TextBox</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.TextBoxExtensions.TextBox(System.Web.Mvc.HtmlHelper,System.String,System.Int32,Thunder.Web.Mvc.Html.Design.WidthStyle,System.Object)">
+            <summary>
+            TextBox
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="maxLength">Maxlength</param>
+            <param name="widthStyle">Width style</param>
+            <param name="htmlAttributes">Html attributes</param>
+            <returns>TextBox</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.TextBoxExtensions.TextBox(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Int32,Thunder.Web.Mvc.Html.Design.WidthStyle)">
+            <summary>
+            TextBox
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="maxLength">Maxlength</param>
+            <param name="value">Value</param>
+            <param name="widthStyle">Width style</param>
+            <returns>TextBox</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.TextBoxExtensions.TextBox(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Int32,Thunder.Web.Mvc.Html.Design.WidthStyle,System.Object)">
+            <summary>
+            TextBox
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="maxLength">Maxlength</param>
+            <param name="value">Value</param>
+            <param name="widthStyle">Width style</param>
+            <param name="htmlAttributes">Html attributes</param>
+            <returns>TextBox</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.TextBoxExtensions.TextBox(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Int32,Thunder.Web.Mvc.Html.Design.WidthStyle,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            TextBox
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="maxLength">Maxlength</param>
+            <param name="value">Value</param>
+            <param name="widthStyle">Width style</param>
+            <param name="htmlAttributes">Html attributes</param>
+            <returns>TextBox</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.TextBoxExtensions.GetClass(Thunder.Web.Mvc.Html.Design.WidthStyle)">
+            <summary>
+            Get class
+            </summary>
+            <param name="widthStyle">Width style</param>
+            <returns>Class</returns>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Html.Design.DateExtensions">
+            <summary>
+            Date extensions
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.DateExtensions.Date(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Date
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.DateExtensions.Date(System.Web.Mvc.HtmlHelper,System.String,System.Int32)">
+            <summary>
+            Date
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="maxLength">Max length</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.DateExtensions.Date(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Int32)">
+            <summary>
+            Date
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <param name="maxLength">Max length</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.DateExtensions.Date(System.Web.Mvc.HtmlHelper,System.String,System.Object)">
+            <summary>
+            Date
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.DateExtensions.Date(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Object)">
+            <summary>
+            Date
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <param name="htmlAttributes">Html attributes</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.DateExtensions.Date(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Int32,System.Object)">
+            <summary>
+            Date
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <param name="maxLength">Max length</param>
+            <param name="htmlAttributes">Html attributes</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.DateExtensions.Date(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Date
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <param name="maxLength">Max length</param>
+            <param name="htmlAttributes">Html Attributes</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="T:Thunder.Web.Mvc.ClearCacheAttribute">
+            <summary>
+            Clear http cache
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.ClearCacheAttribute.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)">
+            <summary>
+            On action executing
+            </summary>
+            <param name="filterContext">Filer context</param>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Html.StyleSheetExtensions">
+            <summary>
+            Java style sheet
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.StyleSheetExtensions.StyleSheet(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Style sheet tag with media screen
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="path">Path</param>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.StyleSheetExtensions.StyleSheet(System.Web.Mvc.HtmlHelper,System.String,System.String)">
+            <summary>
+             Style sheet
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="path">Path</param>
+            <param name="media">Media</param>
+            <returns></returns>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Html.JavaScriptExtensions">
+            <summary>
+            Java script helper
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.JavaScriptExtensions.JavaScript(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Java script tag
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="path">Path</param>
+            <returns></returns>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Html.Design.ContentBoxHeader">
+            <summary>
+            Content box header
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ContentBoxHeader.#ctor">
+            <summary>
+            Initialize new instance of <see cref="T:Thunder.Web.Mvc.Html.Design.ContentBoxHeader"/>.
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.Html.Design.ContentBoxHeader.Title">
+            <summary>
+            Get or set title
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.Html.Design.ContentBoxHeader.Required">
+            <summary>
+            Get or set required
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.Html.Design.ContentBoxHeader.Loading">
+            <summary>
+            Get or set loading
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.Html.Design.ContentBoxHeader.Tabs">
+            <summary>
+            Get or set tab
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.Html.Design.ContentBoxHeader.Buttons">
+            <summary>
+            Get or set buttons
+            </summary>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Html.Design.NumericNExtensions">
+            <summary>
+            Numeric extensions
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.NumericNExtensions.Numeric(System.Web.Mvc.HtmlHelper,System.String,System.Int32)">
+            <summary>
+            TextBox
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="maxLength">Max length</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.NumericNExtensions.Numeric(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Int32)">
+            <summary>
+            Numeric
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <param name="maxLength">Max length</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.NumericNExtensions.Numeric(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Int32,System.Object)">
+            <summary>
+            Numeric
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <param name="maxLength">Max length</param>
+            <param name="htmlAttributes">Html attributes</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.NumericNExtensions.Numeric(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Numeric
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <param name="maxLength">Max length</param>
+            <param name="htmlAttributes">Html Attributes</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Html.Design.ButtonExtensions">
+            <summary>
+             Button extensions
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ButtonExtensions.Button(System.Web.Mvc.HtmlHelper,System.String,System.Object)">
+            <summary>
+            Button
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="text">Text</param>
+            <param name="htmlAttributes">Html attributes</param>
+            <returns>Button</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ButtonExtensions.Button(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Button
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="text">Text</param>
+            <returns>Button</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ButtonExtensions.Button(System.Web.Mvc.HtmlHelper,System.String,System.String)">
+            <summary>
+            Button
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="text">Text</param>
+            <param name="title">Title</param>
+            <returns>Button</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ButtonExtensions.Button(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Object)">
+            <summary>
+            Button
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="text">Text</param>
+            <param name="title">Title</param>
+            <param name="htmlAttributes">Html attributes</param>
+            <returns>Button</returns>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Html.SelectListExtensions">
+            <summary>
+             SelectList extension
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.SelectListExtensions.ToSelectList``1(System.Collections.Generic.IList{``0},System.Func{``0,System.String},System.Func{``0,System.String})">
+            <summary>
+             Convert list items to SelectList collection
+            </summary>
+            <param name="items">Items</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <typeparam name="T">Type</typeparam>
+            <returns>Select list item collection</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.SelectListExtensions.ToSelectList``1(System.Collections.Generic.IList{``0},System.Func{``0,System.String},System.Func{``0,System.String},System.Web.Mvc.SelectListItem)">
+             <summary>
+             Convert list items to SelectList collection
+             </summary>
+             <typeparam name="T">Type</typeparam>
+             <param name="items">Items</param>
+             <param name="name">Name</param>
+             <param name="value">Value</param>
+             <param name="firstItem">First item</param>
+            <returns>Select list item collection</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.SelectListExtensions.ToSelectList``1(System.Collections.Generic.IList{``0},System.Func{``0,System.String},System.Func{``0,System.String},System.String)">
+             <summary>
+             Convert list items to SelectList collection
+             </summary>
+             <typeparam name="T">Type</typeparam>
+             <param name="items">Items</param>
+             <param name="name">Name</param>
+             <param name="value">Value</param>
+             <param name="selectedValue">Selected value</param>
+            <returns>Select list item collection</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.SelectListExtensions.ToSelectList``1(System.Collections.Generic.IList{``0},System.Func{``0,System.String},System.Func{``0,System.String},System.String,System.Web.Mvc.SelectListItem)">
+             <summary>
+             Convert list items to SelectList collection
+             </summary>
+             <typeparam name="T">Type</typeparam>
+             <param name="items">Items</param>
+             <param name="name">Name</param>
+             <param name="value">Value</param>
+             <param name="selectedValue">Selected value</param>
+             <param name="firstItem">First item</param>
+            <returns>Select list item collection</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.SelectListExtensions.ToSelectList``1(System.Collections.Generic.IList{``0},System.Func{``0,System.String},System.Func{``0,System.String},System.Func{``0,System.Boolean},System.Web.Mvc.SelectListItem)">
+             <summary>
+             Convert list items to SelectList collection
+             </summary>
+             <typeparam name="T">Type</typeparam>
+             <param name="items">Items</param>
+             <param name="name">Name</param>
+             <param name="value">Value</param>
+             <param name="isSelected">Check is selected</param>
+             <param name="firstItem">First item</param>
+            <returns>Select list item collection</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.SelectListExtensions.ToMultiSelectList``1(System.Collections.Generic.IList{``0},System.Func{``0,System.String},System.Func{``0,System.String},System.Collections.Generic.IEnumerable{System.String})">
+             <summary>
+             Convert list items to SelectList collection for multiselect
+             </summary>
+             <typeparam name="T">Type</typeparam>
+             <param name="items">Items</param>
+             <param name="name">Name</param>
+             <param name="value">Value</param>
+             <param name="selectedValues">Selected values</param>
+            <returns>Select list item collection</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.SelectListExtensions.ToMultiSelectList``1(System.Collections.Generic.IList{``0},System.Func{``0,System.String},System.Func{``0,System.String},System.Func{``0,System.Boolean})">
+             <summary>
+             Convert list items to SelectList collection for multiselect
+             </summary>
+             <typeparam name="T">Type</typeparam>
+             <param name="items">Items</param>
+             <param name="name">Name</param>
+             <param name="value">Value</param>
+             <param name="isSelected">Check is selected</param>
+            <returns>Select list item collection</returns>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Html.Design.WidthStyle">
+            <summary>
+            Width style
+            </summary>
+        </member>
+        <member name="F:Thunder.Web.Mvc.Html.Design.WidthStyle.Xsmall">
+            <summary>
+             XSmall
+            </summary>
+        </member>
+        <member name="F:Thunder.Web.Mvc.Html.Design.WidthStyle.Small">
+            <summary>
+            Small
+            </summary>
+        </member>
+        <member name="F:Thunder.Web.Mvc.Html.Design.WidthStyle.Medium">
+            <summary>
+            Medium
+            </summary>
+        </member>
+        <member name="F:Thunder.Web.Mvc.Html.Design.WidthStyle.Large">
+            <summary>
+            Large
+            </summary>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Html.Design.CpfExtensions">
+            <summary>
+            Cpf extensions
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.CpfExtensions.Cpf(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Cpf
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.CpfExtensions.Cpf(System.Web.Mvc.HtmlHelper,System.String,System.Int32)">
+            <summary>
+            Cpf
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="maxLength">Max length</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.CpfExtensions.Cpf(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Int32)">
+            <summary>
+            Cpf
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <param name="maxLength">Max length</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.CpfExtensions.Cpf(System.Web.Mvc.HtmlHelper,System.String,System.Object)">
+            <summary>
+            Cpf
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.CpfExtensions.Cpf(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Object)">
+            <summary>
+            Cpf
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <param name="htmlAttributes">Html attributes</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.CpfExtensions.Cpf(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Int32,System.Object)">
+            <summary>
+            Cpf
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <param name="maxLength">Max length</param>
+            <param name="htmlAttributes">Html attributes</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.CpfExtensions.Cpf(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Cpf
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <param name="maxLength">Max length</param>
+            <param name="htmlAttributes">Html Attributes</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Application">
+            <summary>
+            Mvc application
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Application.RegisterGlobalFilters(System.Web.Mvc.GlobalFilterCollection)">
+            <summary>
+            Register global filters
+            </summary>
+            <param name="filters"></param>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Application.RegisterRoutes(System.Web.Routing.RouteCollection)">
+            <summary>
+            Register routes
+            </summary>
+            <param name="routes">Routes</param>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Application.Application_Start">
+            <summary>
+            Application start
+             </summary>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Html.Design.CurrencyExtensions">
+            <summary>
+            Currency extensions
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.CurrencyExtensions.Currency(System.Web.Mvc.HtmlHelper,System.String,System.Int32)">
+            <summary>
+            Currency
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="maxLength">Max length</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.CurrencyExtensions.Currency(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Int32)">
+            <summary>
+            Currency
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <param name="maxLength">Max length</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.CurrencyExtensions.Currency(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Int32,System.Object)">
+            <summary>
+            Currency
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <param name="maxLength">Max length</param>
+            <param name="htmlAttributes">Html attributes</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.CurrencyExtensions.Currency(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Currency
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <param name="maxLength">Max length</param>
+            <param name="htmlAttributes">Html Attributes</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Html.Design.ContentBoxHeaderLoading">
+            <summary>
+            Content box header loading
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ContentBoxHeaderLoading.#ctor">
+            <summary>
+            Initialize new instance of <see cref="T:Thunder.Web.Mvc.Html.Design.ContentBoxHeaderLoading"/>.
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.Html.Design.ContentBoxHeaderLoading.Id">
+            <summary>
+            Get or set id
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.Html.Design.ContentBoxHeaderLoading.ImagePath">
+            <summary>
+            Get or set image path
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.Html.Design.ContentBoxHeaderLoading.Class">
+            <summary>
+            Get or set class
+            </summary>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Html.Design.ContentBoxExtensions">
+            <summary>
+            Content box extensions
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ContentBoxExtensions.ContentBox(System.Web.Mvc.HtmlHelper,System.String,Thunder.Web.Mvc.Html.Design.ContentBoxHeaderLoading)">
+            <summary>
+            Content box
+            </summary>
+            <param name="htmlHelper">Html Helper</param>
+            <param name="title">Title</param>
+            <param name="loading">Loading</param>
+            <returns><see cref="T:Thunder.Web.Mvc.Html.Design.MvcContentBox"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ContentBoxExtensions.ContentBox(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Content box
+            </summary>
+            <param name="htmlHelper">Html helper</param>
+            <param name="title">Title</param>
+            <returns>MvcContentBox</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ContentBoxExtensions.ContentBox(System.Web.Mvc.HtmlHelper,System.String,System.Boolean)">
+            <summary>
+            Content box
+            </summary>
+            <param name="htmlHelper">Html helper</param>
+            <param name="title">Title</param>
+            <param name="required">Required</param>
+            <returns>MvcContentBox</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ContentBoxExtensions.ContentBox(System.Web.Mvc.HtmlHelper,System.String,Thunder.Web.Mvc.Html.Design.ContentBoxHeaderButton[])">
+            <summary>
+            Content box
+            </summary>
+            <param name="htmlHelper">Html helper</param>
+            <param name="title">Title</param>
+            <param name="buttons">Buttons</param>
+            <returns>MvcContentBox</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ContentBoxExtensions.ContentBox(System.Web.Mvc.HtmlHelper,System.String,System.Boolean,Thunder.Web.Mvc.Html.Design.ContentBoxHeaderButton[])">
+            <summary>
+            Content box
+            </summary>
+            <param name="htmlHelper">Html helper</param>
+            <param name="title">Title</param>
+            <param name="required">Required</param>
+            <param name="buttons">Buttons</param>
+            <returns>MvcContentBox</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ContentBoxExtensions.ContentBox(System.Web.Mvc.HtmlHelper,System.String,Thunder.Web.Mvc.Html.Design.ContentBoxHeaderTab[])">
+            <summary>
+            Content box
+            </summary>
+            <param name="htmlHelper">Html helper</param>
+            <param name="title">Title</param>
+            <param name="tabs">Tabs</param>
+            <returns>MvcContentBox</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ContentBoxExtensions.ContentBox(System.Web.Mvc.HtmlHelper,System.String,System.Boolean,Thunder.Web.Mvc.Html.Design.ContentBoxHeaderTab[])">
+            <summary>
+            Content box
+            </summary>
+            <param name="htmlHelper">Html helper</param>
+            <param name="title">Title</param>
+            <param name="required">Required</param>
+            <param name="tabs">Tabs</param>
+            <returns>MvcContentBox</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ContentBoxExtensions.ContentBoxHelper(System.Web.Mvc.HtmlHelper,Thunder.Web.Mvc.Html.Design.ContentBoxHeader)">
+            <summary>
+            Content box helper
+            </summary>
+            <param name="htmlHelper">Html helper</param>
+            <param name="header">Header</param>
+            <returns>MvcContentBox</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ContentBoxExtensions.Header(System.Web.Mvc.HtmlHelper,Thunder.Web.Mvc.Html.Design.ContentBoxHeader)">
+            <summary>
+            Header
+            </summary>
+            <param name="htmlHelper">Html header</param>
+            <param name="header">header</param>
+            <returns>Hearder</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ContentBoxExtensions.CreateHeaderButtons(Thunder.Web.Mvc.Html.Design.ContentBoxHeader,System.Web.Mvc.TagBuilder,System.Web.Mvc.HtmlHelper)">
+            <summary>
+            Create header buttons
+            </summary>
+            <param name="header">Header</param>
+            <param name="builder">Builder</param>
+            <param name="htmlHelper">Html helper</param>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ContentBoxExtensions.CreateHeaderTabs(Thunder.Web.Mvc.Html.Design.ContentBoxHeader,System.Web.Mvc.TagBuilder)">
+            <summary>
+            Create header tabs
+            </summary>
+            <param name="header">Header</param>
+            <param name="builder">Builder</param>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ContentBoxExtensions.CreateHeaderLoading(Thunder.Web.Mvc.Html.Design.ContentBoxHeader,System.Web.Mvc.TagBuilder,System.Web.Mvc.HtmlHelper)">
+            <summary>
+            Create header loading
+            </summary>
+            <param name="header">Header</param>
+            <param name="builder">Builder</param>
+            <param name="htmlHelper">Html helper</param>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.ContentBoxExtensions.Content">
+            <summary>
+            Content
+            </summary>
+            <returns>Content</returns>
+        </member>
+        <member name="T:Thunder.Web.Mvc.UrlHelperExtensions">
+            <summary>
+            Url helper extensions
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.UrlHelperExtensions.Absolute(System.Web.Mvc.UrlHelper,System.String)">
+            <summary>
+            Get absolute url
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="url">Url</param>
+            <returns>Absolute url</returns>
+        </member>
+        <member name="T:Thunder.Web.Mvc.MessageResult">
+            <summary>
+            Message result
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.MessageResult.#ctor(Thunder.Web.ResultStatus,System.Web.Mvc.ModelStateDictionary)">
+            <summary>
+            Initialize new instance of <see cref="T:Thunder.Web.Mvc.MessageResult"/>.
+            </summary>
+            <param name="resultStatus">Result status</param>
+            <param name="modelState">Model state</param>
+        </member>
+        <member name="M:Thunder.Web.Mvc.MessageResult.#ctor(Thunder.Web.ResultStatus,System.Web.Mvc.ModelStateDictionary,Thunder.Web.IModel)">
+            <summary>
+            Initialize new instance of <see cref="T:Thunder.Web.Mvc.MessageResult"/>.
+            </summary>
+            <param name="resultStatus">Result status</param>
+            <param name="modelState">Model state</param>
+            <param name="model">Model</param>
+        </member>
+        <member name="M:Thunder.Web.Mvc.MessageResult.#ctor(System.String,Thunder.Web.ResultStatus,System.Web.Mvc.ModelStateDictionary,Thunder.Web.IModel)">
+            <summary>
+            Initialize new instance of <see cref="T:Thunder.Web.Mvc.MessageResult"/>.
+            </summary>
+            <param name="viewName">View name</param>
+            <param name="resultStatus">Result status</param>
+            <param name="modelState">Model state</param>
+            <param name="model">Model</param>
+        </member>
+        <member name="M:Thunder.Web.Mvc.MessageResult.#ctor(Thunder.Web.ResultStatus,System.Collections.Generic.IList{Thunder.Message})">
+            <summary>
+            Initialize new instance of <see cref="T:Thunder.Web.Mvc.MessageResult"/>.
+            </summary>
+            <param name="resultStatus">Result status</param>
+            <param name="messages">Message collection</param>
+        </member>
+        <member name="M:Thunder.Web.Mvc.MessageResult.#ctor(Thunder.Web.ResultStatus,System.Collections.Generic.IList{Thunder.Message},Thunder.Web.IModel)">
+            <summary>
+            Initialize new instance of <see cref="T:Thunder.Web.Mvc.MessageResult"/>.
+            </summary>
+            <param name="resultStatus">Result status</param>
+            <param name="messages">Message colletion</param>
+            <param name="model">Model</param>
+        </member>
+        <member name="M:Thunder.Web.Mvc.MessageResult.#ctor(System.String,Thunder.Web.ResultStatus,System.Collections.Generic.IList{Thunder.Message},Thunder.Web.IModel)">
+            <summary>
+            Initialize new instance of <see cref="T:Thunder.Web.Mvc.MessageResult"/>.
+            </summary>
+            <param name="viewName">View name</param>
+            <param name="resultStatus">Result status</param>
+            <param name="messages">Message collection</param>
+            <param name="model">Model</param>
+        </member>
+        <member name="T:Thunder.Web.Mvc.JsonResult">
+            <summary>
+            Json result
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.JsonResult.#ctor">
+            <summary>
+            Initialize a new instance of the class <see cref="T:Thunder.Web.Mvc.JsonResult"/>.
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.JsonResult.#ctor(Thunder.Web.ResultStatus)">
+            <summary>
+            Initialize a new instance of the class <see cref="T:Thunder.Web.Mvc.JsonResult"/>.
+            </summary>
+            <param name="status">Status</param>
+        </member>
+        <member name="M:Thunder.Web.Mvc.JsonResult.#ctor(Thunder.Web.ResultStatus,System.Web.Mvc.ModelStateDictionary)">
+            <summary>
+            Initialize a new instance of the class <see cref="T:Thunder.Web.Mvc.JsonResult"/>.
+            </summary>
+            <param name="status">Status</param>
+            <param name="modelStateDictionary">Model state dictionary</param>
+        </member>
+        <member name="M:Thunder.Web.Mvc.JsonResult.ExecuteResult(System.Web.Mvc.ControllerContext)">
+            <summary>
+            Execute result
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Thunder.Web.Mvc.JsonResult.Serialize(System.Web.HttpContextBase)">
+            <summary>
+            Serialize
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Thunder.Web.Mvc.JsonResult.ParseModelStateToMessage(System.Web.Mvc.ModelStateDictionary)">
+            <summary>
+            Parse model state dictionary to messages
+            </summary>
+            <param name="modelStateDictionary">Model state</param>
+        </member>
+        <member name="P:Thunder.Web.Mvc.JsonResult.Status">
+            <summary>
+             Json result status
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.JsonResult.Data">
+            <summary>
+            Get or set data
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.JsonResult.Messages">
+            <summary>
+            Get or set messages
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.JsonResult.ContentEncoding">
+            <summary>
+            Get or set content encoding
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.JsonResult.ContentType">
+            <summary>
+            Get an set content type
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.JsonResult.JsonRequestBehavior">
+            <summary>
+            Get or set json request behavior
+            </summary>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Html.Design.CnpjExtensions">
+            <summary>
+            Cnpj extensions
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.CnpjExtensions.Cnpj(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            Cnpj
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.CnpjExtensions.Cnpj(System.Web.Mvc.HtmlHelper,System.String,System.Int32)">
+            <summary>
+            Cnpj
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="maxLength">Max length</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.CnpjExtensions.Cnpj(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Int32)">
+            <summary>
+            Cnpj
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <param name="maxLength">Max length</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.CnpjExtensions.Cnpj(System.Web.Mvc.HtmlHelper,System.String,System.Object)">
+            <summary>
+            Cnpj
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.CnpjExtensions.Cnpj(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Object)">
+            <summary>
+            Cnpj
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <param name="htmlAttributes">Html attributes</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.CnpjExtensions.Cnpj(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Int32,System.Object)">
+            <summary>
+            Cnpj
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <param name="maxLength">Max length</param>
+            <param name="htmlAttributes">Html attributes</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.CnpjExtensions.Cnpj(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Cnpj
+            </summary>
+            <param name="helper">Helper</param>
+            <param name="name">Name</param>
+            <param name="value">Value</param>
+            <param name="maxLength">Max length</param>
+            <param name="htmlAttributes">Html Attributes</param>
+            <returns><see cref="T:System.Web.Mvc.MvcHtmlString"/></returns>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Html.Design.ContentBoxHeaderTab">
+            <summary>
+            Content box tab
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.Html.Design.ContentBoxHeaderTab.Text">
+            <summary>
+            Get or set text
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.Html.Design.ContentBoxHeaderTab.Title">
+            <summary>
+            Get or set title
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Mvc.Html.Design.ContentBoxHeaderTab.Current">
+            <summary>
+            Get or set current tab
+            </summary>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Controller">
+            <summary>
+            Custom controller
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Controller.AddMessage(System.String)">
+            <summary>
+            Add message
+            </summary>
+            <param name="message">Message</param>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Controller.AddMessage(Thunder.Message)">
+            <summary>
+            Add message
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Controller.View(Thunder.Web.ResultStatus)">
+            <summary>
+            Create view result
+            </summary>
+            <param name="status">Result status</param>
+            <returns>Message result</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Controller.View(Thunder.Web.ResultStatus,Thunder.Web.IModel)">
+            <summary>
+            Create view result
+            </summary>
+            <param name="status">Result status</param>
+            <param name="model">Model</param>
+            <returns>Message result</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Controller.View(System.String,Thunder.Web.ResultStatus,Thunder.Web.IModel)">
+            <summary>
+            Create view result
+            </summary>
+            <param name="viewName">View name</param>
+            <param name="status">Result status</param>
+            <param name="model">Model</param>
+            <returns>Message result</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Controller.View(Thunder.Web.ResultStatus,Thunder.Message)">
+            <summary>
+            Create view result 
+            </summary>
+            <param name="status">Result status</param>
+            <param name="message">Message</param>
+            <returns>Message result</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Controller.View(Thunder.Web.ResultStatus,Thunder.Message,Thunder.Web.IModel)">
+            <summary>
+            Create view result 
+            </summary>
+            <param name="status">Result status</param>
+            <param name="message">Message</param>
+            <param name="model">Model</param>
+            <returns>Message result</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Controller.View(System.String,Thunder.Web.ResultStatus,Thunder.Message,Thunder.Web.IModel)">
+            <summary>
+            Create view result 
+            </summary>
+            <param name="viewName">View name</param>
+            <param name="status">Result status</param>
+            <param name="message">Message</param>
+            <param name="model">Model</param>
+            <returns>Message result</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Controller.View(Thunder.Web.ResultStatus,System.String)">
+            <summary>
+            Create view result
+            </summary>
+            <param name="status">Result status</param>
+            <param name="message">Message</param>
+            <returns>Message result</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Controller.View(Thunder.Web.ResultStatus,System.String,Thunder.Web.IModel)">
+            <summary>
+            Create view result
+            </summary>
+            <param name="status">Result status</param>
+            <param name="message">Message</param>
+            <param name="model">Model</param>
+            <returns>Message result</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Controller.View(System.String,Thunder.Web.ResultStatus,System.String,Thunder.Web.IModel)">
+            <summary>
+            Create view result 
+            </summary>
+            <param name="viewName">View name</param>
+            <param name="status">Result status</param>
+            <param name="message">Message</param>
+            <param name="model">Model</param>
+            <returns>Message result</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Controller.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)">
+            <summary>
+            Called before the action method is invoked
+            </summary>
+            <param name="filterContext">Filter context</param>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Controller.RenderPartial(System.Object)">
+            <summary>
+            Render partial view
+            </summary>
+            <param name="model">Model</param>
+            <returns>View</returns>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Controller.RenderPartial(System.String,System.Object)">
+            <summary>
+            Render partial view
+            </summary>
+            <param name="viewName">View name</param>
+            <param name="model">Model</param>
+            <returns>View</returns>
+        </member>
+        <member name="P:Thunder.Web.Mvc.Controller.Messages">
+            <summary>
+            Get messages
+            </summary>
+        </member>
+        <member name="T:Thunder.Web.Mvc.Html.Design.MvcContentBox">
+            <summary>
+             Mvc content box
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.MvcContentBox.#ctor(System.Web.Mvc.ViewContext)">
+            <summary>
+            Initialize new instance of <see cref="T:Thunder.Web.Mvc.Html.Design.MvcContentBox"/>.
+            </summary>
+            <param name="viewContext"></param>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.MvcContentBox.Dispose">
+            <summary>
+            Dispose
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.Mvc.Html.Design.MvcContentBox.Dispose(System.Boolean)">
+            <summary>
+            Dispose
+            </summary>
+            <param name="disposing"></param>
+        </member>
+    </members>
+</doc>

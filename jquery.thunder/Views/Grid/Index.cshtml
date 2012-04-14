@@ -1,0 +1,20 @@
+﻿<h2>
+    Grid</h2>
+<script type="text/javascript">
+    $(function () {
+        $('#grid1').grid({
+            onComplete: function() {
+                console.log('load');
+            }
+        });
+
+        $('#grid2').grid({
+            onComplete: function () {
+                console.log('load');
+            }
+        });
+    });
+</script>
+<div id="grid1" data-url="@Url.Content("~/grid/data")"></div>
+
+

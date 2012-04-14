@@ -1,0 +1,54 @@
+﻿<h2>
+    Ajax em formulários</h2>
+<script type="text/javascript">
+    $(function () {
+        $('#form-json').ajaxForm({
+            onSuccess: function (form) {
+                form.data('message').message('success', 'Registro salvo com sucesso!');
+            }
+        });
+
+        $('#form-html').ajaxForm({
+            onSuccess: function (form) {
+                form.data('message').message('success', 'Registro salvo com sucesso!');
+            }
+        });
+    });
+</script>
+<h3>
+    Exemplo 1 - Retornando json</h3>
+<form id="form-json" method="POST" action="@Url.Content("~/form/json")">
+<p>
+    <label>
+        Nome</label>
+    <input name="name" type="text" />
+</p>
+<p>
+    <input type="submit" value="Enviar" />
+</p>
+</form>
+<h3>
+    Exemplo 2 - Retornando html</h3>
+<form id="form-html" method="POST" action="@Url.Content("~/form/html")">
+<p>
+    <label>
+        Nome</label>
+    <input name="name" type="text" />
+</p>
+<p>
+    <input type="submit" value="Enviar" />
+</p>
+</form>
+<div>
+    <h3>
+        Exemplo</h3>
+    <pre class="prettyprint lang-js">
+    $(function () {
+        $.thunder.message('#success').success('Mensagem de sucesso.');
+        $.thunder.message('#attention').attention('Mensagem de atenção.');
+        $.thunder.message('#information').information('Mensagem de informação.');
+        $.thunder.message('#error').error('Mensagem de erro.');
+        $.thunder.message('#information-multi', {focus: true}).information([{ Text: 'Mensagem 1' }, { Text: 'Mensagem 2' }, { Text: 'Mensagem 3'}]);
+    });
+    </pre>
+</div>

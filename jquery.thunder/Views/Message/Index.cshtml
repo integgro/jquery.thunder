@@ -1,0 +1,27 @@
+﻿<h2>Mensagem</h2>
+<script type="text/javascript">
+    $(function () {
+        $('#success').message('success', 'Mensagem de sucesso.');
+        $('#attention').message('attention', 'Mensagem de atenção.');
+        $('#error').message('error', 'Mensagem de erro.');
+        $('#information').message('information', 'Mensagem de informação.');
+        $('#information-multi').message('information', [{ Text: 'Mensagem 1' }, { Text: 'Mensagem 2' }, { Text: 'Mensagem 3'}]);
+    });
+</script>
+<div id="success"></div>
+<div id="attention"></div>
+<div id="information"></div>
+<div id="error"></div>
+<div id="information-multi"></div>
+<div>
+    <h3>Exemplo</h3>
+    <pre class="prettyprint lang-js">
+    $(function () {
+        $.thunder.message('#success').success('Mensagem de sucesso.');
+        $.thunder.message('#attention').attention('Mensagem de atenção.');
+        $.thunder.message('#information').information('Mensagem de informação.');
+        $.thunder.message('#error').error('Mensagem de erro.');
+        $.thunder.message('#information-multi', {focus: true}).information([{ Text: 'Mensagem 1' }, { Text: 'Mensagem 2' }, { Text: 'Mensagem 3'}]);
+    });
+    </pre>
+</div>

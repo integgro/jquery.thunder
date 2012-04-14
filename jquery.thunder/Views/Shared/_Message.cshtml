@@ -1,0 +1,48 @@
+﻿@using Thunder.Web
+@model IModel
+@{Layout = null;}
+@if (Model != null && Model.Messages != null && Model.Messages.Count > 0)
+{
+    var cssClass = "";
+
+    if (Model.Status.Equals(ResultStatus.Attention) || Model.Status.Equals(ResultStatus.Unauthorized))
+    {
+        cssClass = "attention";
+    }
+    else if (Model.Status.Equals(ResultStatus.Error))
+    {
+        cssClass = "error";
+    }
+    else if (Model.Status.Equals(ResultStatus.Information))
+    {
+        cssClass = "information";
+    }
+    else if (Model.Status.Equals(ResultStatus.Success))
+    {
+        cssClass = "success";
+    }
+
+    <div class="thunder-notification message thunder-@cssClass">
+        @if (ViewBag.ShowClose != null && (bool)ViewBag.ShowClose)
+        {
+            <a class="close" href="#">
+                <img alt="close" title="Close this notification" src="@Url.Content("~/content/jquery.thunder/images/close.png")">
+            </a>
+        }
+        <div class="thunder-notification-content">
+            @if (Model.Messages.Count == 1)
+            {
+                @Model.Messages[0].Text
+            }
+            else
+            {
+                <ul>
+                    @foreach (var message in Model.Messages)
+                    {
+                        <li>@message.Text</li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+}

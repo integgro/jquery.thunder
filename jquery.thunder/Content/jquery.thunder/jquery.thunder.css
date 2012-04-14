@@ -1,0 +1,76 @@
+﻿.thunder-notification {
+    position: relative;
+    margin: 0 0 15px 0;
+    padding: 0;
+    border: 1px solid;
+    background-position: 10px 11px !important;
+    background-repeat: no-repeat !important;
+    font-size: 13px;
+    width: 99.8%;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.thunder-attention {
+    background: #fffbcc url('images/attention.png') 10px 11px no-repeat;
+    border-color: #e6db55;
+    color: #666452;
+}
+
+.thunder-information {
+    background: #dbe3ff url('images/information.png');
+    border-color: #a2b4ee;
+    color: #585b66;
+}
+
+.thunder-success {
+    background: #d5ffce url('images/success.png');
+    border-color: #9adf8f;
+    color: #556652;
+}
+
+.thunder-error {
+    background: #ffcece url('images/error.png');
+    border-color: #df8f8f;
+    color: #665252;
+}
+
+.thunder-notification-content {
+    display: block;
+    font-style: normal;
+    padding: 10px 10px 10px 36px;
+    line-height: 1.5em;
+}
+
+.thunder-notification-content ul {
+    padding-left: 10px; margin-top: 0px; margin-bottom: 0px;
+}
+
+.thunder-notification .close {
+    color: #990000;
+    font-size: 9px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    display: block;
+    width: 7px;
+    height: 7px;
+    background: transparent url('images/close.png') ;
+}
+
+.thunder-form-loading 
+{
+    position: relative;
+    display: block;
+    background: url(images/loading.gif);
+    width: 22px;
+    height: 22px;
+}
+
+.thunder-grid-loading {
+    position: relative;
+    background: url(images/loading.gif);
+    width: 22px;
+    height: 22px;
+}

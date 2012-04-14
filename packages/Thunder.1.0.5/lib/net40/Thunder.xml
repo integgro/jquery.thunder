@@ -1,0 +1,1302 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Thunder</name>
+    </assembly>
+    <members>
+        <member name="T:Thunder.Security.CryptographyProvider">
+            <summary>
+            Enumerator provider for criptography method
+            </summary>
+        </member>
+        <member name="F:Thunder.Security.CryptographyProvider.Rijndael">
+            <summary>
+            Rijndael
+            </summary>
+        </member>
+        <member name="F:Thunder.Security.CryptographyProvider.RC2">
+            <summary>
+            RC2
+            </summary>
+        </member>
+        <member name="F:Thunder.Security.CryptographyProvider.DES">
+            <summary>
+            DES
+            </summary>
+        </member>
+        <member name="F:Thunder.Security.CryptographyProvider.TripleDES">
+            <summary>
+            TripleDES
+            </summary>
+        </member>
+        <member name="T:Thunder.ComponentModel.DataAnnotations.CurrencyAttribute">
+            <summary>
+             Currency validator
+            </summary>
+        </member>
+        <member name="M:Thunder.ComponentModel.DataAnnotations.CurrencyAttribute.IsValid(System.Object)">
+            <summary>
+            Currency is valid
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="P:Thunder.ComponentModel.DataAnnotations.CurrencyAttribute.AcceptNegative">
+            <summary>
+            Accept negative
+            </summary>
+        </member>
+        <member name="T:Thunder.NHibernate.IRepository`2">
+            <summary>
+            Repository interface
+            </summary>
+            <typeparam name="T">Object type</typeparam>
+            <typeparam name="TKey">Key type</typeparam>
+        </member>
+        <member name="M:Thunder.NHibernate.IRepository`2.Add(`0)">
+            <summary>
+            Add object in repository
+            </summary>
+            <param name="object">Object</param>
+            <returns>Created object</returns>
+        </member>
+        <member name="M:Thunder.NHibernate.IRepository`2.Update(`0)">
+            <summary>
+            Update object in repository
+            </summary>
+            <param name="object">Object</param>
+            <returns>Updated object</returns>
+        </member>
+        <member name="M:Thunder.NHibernate.IRepository`2.Remove(`0)">
+            <summary>
+            Remove object of repository
+            </summary>
+            <param name="object">Object</param>
+        </member>
+        <member name="M:Thunder.NHibernate.IRepository`2.Remove(`1)">
+            <summary>
+            Remove entity repository
+            </summary>
+            <param name="id">Id</param>
+        </member>
+        <member name="M:Thunder.NHibernate.IRepository`2.FindById(`1)">
+            <summary>
+            Find object by id
+            </summary>
+            <param name="id">Id</param>
+            <returns>Object</returns>
+        </member>
+        <member name="M:Thunder.NHibernate.IRepository`2.FindAll">
+            <summary>
+            Find all entities
+            </summary>
+            <returns>Object list</returns>
+        </member>
+        <member name="M:Thunder.NHibernate.IRepository`2.FindAll(NHibernate.Criterion.Order)">
+            <summary>
+            Find all entities with order
+            </summary>
+            <param name="order">Order</param>
+            <returns>Object list sorted</returns>
+        </member>
+        <member name="P:Thunder.NHibernate.IRepository`2.Session">
+            <summary>
+            Get hibernate session
+            </summary>
+        </member>
+        <member name="T:Thunder.Security.Cryptography">
+            <summary>
+            Cryptography security
+            </summary>
+        </member>
+        <member name="M:Thunder.Security.Cryptography.#ctor">
+            <summary>
+            Initialize a new instance of the class <see cref="T:Thunder.Security.Cryptography"/>.
+            </summary>
+        </member>
+        <member name="M:Thunder.Security.Cryptography.#ctor(Thunder.Security.CryptographyProvider)">
+            <summary>
+            Initialize a new instance of the class <see cref="T:Thunder.Security.Cryptography"/>.
+            </summary>
+            <param name="provider">Provider</param>
+        </member>
+        <member name="M:Thunder.Security.Cryptography.SetIv">
+            <summary>
+            Set IV
+            </summary>
+        </member>
+        <member name="M:Thunder.Security.Cryptography.GetKey">
+            <summary>
+            Get salt key 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.Security.Cryptography.Encrypt(System.String)">
+            <summary>
+            Encrypt text
+            </summary>
+            <param name="text">Text</param>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.Security.Cryptography.Decrypt(System.String)">
+            <summary>
+            Decrypt text
+            </summary>
+            <param name="text">Text</param>
+            <returns></returns>
+        </member>
+        <member name="P:Thunder.Security.Cryptography.Key">
+            <summary>
+            Get and set key for criptography
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Cryptography.Encoding">
+            <summary>
+            Get and set enconding
+            </summary>
+        </member>
+        <member name="T:Thunder.Data.Paging`1">
+            <summary>
+             Paging
+            </summary>
+            <typeparam name="T">Type</typeparam>
+        </member>
+        <member name="T:Thunder.Data.IPaging`1">
+            <summary>
+            Paging interface
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Thunder.Data.IPaging`1.PageCount">
+            <summary>
+            Get total pages
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.IPaging`1.Records">
+            <summary>
+            Get total records 
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.IPaging`1.CurrentPage">
+            <summary>
+            Get current page
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.IPaging`1.PageSize">
+            <summary>
+            Get page size
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.IPaging`1.HasPreviousPage">
+            <summary>
+            Get information if there is previous page
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.IPaging`1.HasNextPage">
+            <summary>
+            Get information if there is next page
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.IPaging`1.IsFirstPage">
+            <summary>
+            Get information if is first page
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.IPaging`1.IsLastPage">
+            <summary>
+            Get information if is last page
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.IPaging`1.Skip">
+            <summary>
+            Get skip records
+            </summary>
+        </member>
+        <member name="M:Thunder.Data.Paging`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Int32,System.Int32,System.Nullable{System.Int64})">
+            <summary>
+            Initialize new instance of <see cref="T:Thunder.Data.Paging`1"/>.
+            </summary>
+            <param name="source">Source data</param>
+            <param name="currentPage">Current page</param>
+            <param name="pageSize">Page size</param>
+            <param name="records">Total records</param>
+        </member>
+        <member name="M:Thunder.Data.Paging`1.#ctor(System.Linq.IQueryable{`0},System.Int32,System.Int32,System.Nullable{System.Int64})">
+            <summary>
+            Initialize new instance of <see cref="T:Thunder.Data.Paging`1"/>.
+            </summary>
+            <param name="source">Source data</param>
+            <param name="currentPage">Current page</param>
+            <param name="pageSize">Page size</param>
+            <param name="records">Total records</param>
+        </member>
+        <member name="M:Thunder.Data.Paging`1.SetSkip(System.Linq.IQueryable{`0})">
+            <summary>
+            Set skip records
+            </summary>
+            <param name="source">Source</param>
+        </member>
+        <member name="P:Thunder.Data.Paging`1.PageCount">
+            <summary>
+            Get total pages
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.Paging`1.Records">
+            <summary>
+            Get total records 
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.Paging`1.CurrentPage">
+            <summary>
+            Get current page
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.Paging`1.PageSize">
+            <summary>
+            Get page size
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.Paging`1.HasPreviousPage">
+            <summary>
+            Get information if there is previous page
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.Paging`1.HasNextPage">
+            <summary>
+            Get information if there is next page
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.Paging`1.IsFirstPage">
+            <summary>
+            Get information if is first page
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.Paging`1.IsLastPage">
+            <summary>
+            Get information if is last page
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.Paging`1.Skip">
+            <summary>
+            Get skip records
+            </summary>
+        </member>
+        <member name="T:Thunder.NHibernate.CfgSerialization">
+            <summary>
+            Serialization Hibernate Configuration
+            </summary>
+        </member>
+        <member name="M:Thunder.NHibernate.CfgSerialization.#ctor(System.String)">
+            <summary>
+            Initialize new instance of <see cref="T:Thunder.NHibernate.CfgSerialization"/>.
+            </summary>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:Thunder.NHibernate.CfgSerialization.GetPath">
+            <summary>
+            Get path serialization file
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.NHibernate.CfgSerialization.Exist">
+            <summary>
+            Identifies whether the serialized file exists
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.NHibernate.CfgSerialization.IsValid">
+            <summary>
+            Configuration file serialized is valid
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.NHibernate.CfgSerialization.IsNew">
+            <summary>
+            Configuration file serialized is new
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.NHibernate.CfgSerialization.Create(NHibernate.Cfg.Configuration)">
+            <summary>
+            Create configuration file serialized
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:Thunder.NHibernate.CfgSerialization.Delete">
+            <summary>
+            Delete file serialized
+            </summary>
+        </member>
+        <member name="M:Thunder.NHibernate.CfgSerialization.Load">
+            <summary>
+            Load configuration
+            </summary>
+            <returns>Configuration</returns>
+        </member>
+        <member name="M:Thunder.NHibernate.CfgSerialization.Load(System.String)">
+            <summary>
+            Load configuration
+            </summary>
+            <param name="fileName">File name</param>
+            <returns>Configuration</returns>
+        </member>
+        <member name="T:Thunder.ComponentModel.DataAnnotations.DocumentType">
+            <summary>
+            Document type
+            </summary>
+        </member>
+        <member name="F:Thunder.ComponentModel.DataAnnotations.DocumentType.Cnpj">
+            <summary>
+            Cnpj
+            </summary>
+        </member>
+        <member name="F:Thunder.ComponentModel.DataAnnotations.DocumentType.Cpf">
+            <summary>
+            Cpf
+            </summary>
+        </member>
+        <member name="T:Thunder.Security.Hash">
+            <summary>
+            Hash security
+            </summary>
+        </member>
+        <member name="M:Thunder.Security.Hash.#ctor">
+            <summary>
+            Initialize a new instance of the class <see cref="T:Thunder.Security.Hash"/>.
+            </summary>
+        </member>
+        <member name="M:Thunder.Security.Hash.#ctor(Thunder.Security.HashProvider)">
+            <summary>
+            Initialize a new instance of the class <see cref="T:Thunder.Security.Hash"/>.
+            </summary>
+            <param name="provider">Provider</param>
+        </member>
+        <member name="M:Thunder.Security.Hash.Get(System.String)">
+            <summary>
+            Get hash
+            </summary>
+            <param name="text">Text</param>
+            <returns>Hash</returns>
+        </member>
+        <member name="M:Thunder.Security.Hash.Get(System.IO.FileStream)">
+            <summary>
+            Get hash
+            </summary>
+            <param name="fileStream">File stream</param>
+            <returns>Hash</returns>
+        </member>
+        <member name="P:Thunder.Security.Hash.Encoding">
+            <summary>
+            Get and set enconding
+            </summary>
+        </member>
+        <member name="T:Thunder.NHibernate.SessionManager">
+            <summary>
+            Hibernate session manager
+            </summary>
+        </member>
+        <member name="M:Thunder.NHibernate.SessionManager.#ctor">
+            <summary>
+            Initialize new instance of <see cref="T:Thunder.NHibernate.SessionManager"/>.
+            </summary>
+        </member>
+        <member name="M:Thunder.NHibernate.SessionManager.GetSessionFactory">
+            <summary>
+            Get instance of <see cref="T:NHibernate.ISessionFactory"/>.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.NHibernate.SessionManager.OpenSession">
+            <summary>
+            Get current session opened 
+            </summary>
+            <returns><see cref="T:NHibernate.ISession"/></returns>
+        </member>
+        <member name="M:Thunder.NHibernate.SessionManager.Configuration">
+            <summary>
+            Get hibernate configuration
+            </summary>
+            <returns><see cref="M:Thunder.NHibernate.SessionManager.Configuration"/></returns>
+        </member>
+        <member name="P:Thunder.NHibernate.SessionManager.Instance">
+            <summary>
+            Get instance of <see cref="T:Thunder.NHibernate.SessionManager"/>.
+            </summary>
+        </member>
+        <member name="P:Thunder.NHibernate.SessionManager.SessionFactory">
+            <summary>
+            Get current instance of <see cref="T:NHibernate.ISessionFactory"/>.
+            </summary>
+        </member>
+        <member name="T:Thunder.NHibernate.SessionManager.NestedSessionManager">
+            <summary>
+            Internal nested session manager
+            </summary>
+        </member>
+        <member name="T:Thunder.NHibernate.Repository`2">
+            <summary>
+            Generic Repository
+            </summary>
+            <typeparam name="T">Object</typeparam>
+            <typeparam name="TKey">Id</typeparam>
+        </member>
+        <member name="M:Thunder.NHibernate.Repository`2.#ctor(NHibernate.ISession)">
+            <summary>
+            Initialize new instance of <see cref="T:Thunder.NHibernate.Repository`2"/>.
+            </summary>
+            <param name="session">Hibernate session</param>
+        </member>
+        <member name="M:Thunder.NHibernate.Repository`2.Add(`0)">
+            <summary>
+            Add object in repository
+            </summary>
+            <param name="object">Object</param>
+            <returns>Created object</returns>
+        </member>
+        <member name="M:Thunder.NHibernate.Repository`2.Update(`0)">
+            <summary>
+            Update object in repository
+            </summary>
+            <param name="object">Object</param>
+            <returns>Updated object</returns>
+        </member>
+        <member name="M:Thunder.NHibernate.Repository`2.Remove(`0)">
+            <summary>
+            Remove object of repository
+            </summary>
+            <param name="object">Object</param>
+        </member>
+        <member name="M:Thunder.NHibernate.Repository`2.Remove(`1)">
+            <summary>
+            Remove entity repository
+            </summary>
+            <param name="id">Id</param>
+        </member>
+        <member name="M:Thunder.NHibernate.Repository`2.FindById(`1)">
+            <summary>
+            Find object by id
+            </summary>
+            <param name="id">Id</param>
+            <returns>Object</returns>
+        </member>
+        <member name="M:Thunder.NHibernate.Repository`2.FindAll">
+            <summary>
+            Find all entities
+            </summary>
+            <returns>Object list</returns>
+        </member>
+        <member name="M:Thunder.NHibernate.Repository`2.FindAll(NHibernate.Criterion.Order)">
+            <summary>
+            Find all entities with order
+            </summary>
+            <param name="order">Order</param>
+            <returns>Object list sorted</returns>
+        </member>
+        <member name="P:Thunder.NHibernate.Repository`2.Session">
+            <summary>
+            Get hibernate session instance
+            </summary>
+        </member>
+        <member name="T:Thunder.Data.ObjectState">
+            <summary>
+            Object state enumeration 
+            </summary>
+        </member>
+        <member name="F:Thunder.Data.ObjectState.Added">
+            <summary>
+            Added
+            </summary>
+        </member>
+        <member name="F:Thunder.Data.ObjectState.Deleted">
+            <summary>
+            Deleted
+            </summary>
+        </member>
+        <member name="F:Thunder.Data.ObjectState.Modified">
+            <summary>
+            Modified
+            </summary>
+        </member>
+        <member name="F:Thunder.Data.ObjectState.Unchanged">
+            <summary>
+            Not changed 
+            </summary>
+        </member>
+        <member name="T:Thunder.ComponentModel.DataAnnotations.NumberAttribute">
+            <summary>
+            Positive number validator
+            </summary>
+        </member>
+        <member name="M:Thunder.ComponentModel.DataAnnotations.NumberAttribute.#ctor">
+            <summary>
+            Initialize new instance of <see cref="T:Thunder.ComponentModel.DataAnnotations.NumberAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:Thunder.ComponentModel.DataAnnotations.NumberAttribute.IsValid(System.Object)">
+            <summary>
+            Is number
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="P:Thunder.ComponentModel.DataAnnotations.NumberAttribute.Minimum">
+            <summary>
+            Get or set minimum mumber. Default 0.
+            </summary>
+        </member>
+        <member name="P:Thunder.ComponentModel.DataAnnotations.NumberAttribute.Maximum">
+            <summary>
+            Get or set maximum mumber. Default 999.
+            </summary>
+        </member>
+        <member name="T:Thunder.NHibernate.PagingExtensions">
+            <summary>
+            Extensions
+            </summary>
+        </member>
+        <member name="M:Thunder.NHibernate.PagingExtensions.Paging``1(NHibernate.IQuery,System.Int32,System.Int32)">
+            <summary>
+            Paging query results
+            </summary>
+            <typeparam name="T">{T}</typeparam>
+            <param name="query">Nhibernate query</param>
+            <param name="currentPage">Current page</param>
+            <param name="pageSize">Page size</param>
+            <returns>Data paging</returns>
+        </member>
+        <member name="M:Thunder.NHibernate.PagingExtensions.Paging``1(NHibernate.IQuery,System.Int32,System.Int32,System.Nullable{System.Int64})">
+            <summary>
+            Paging query results
+            </summary>
+            <typeparam name="T">{T}</typeparam>
+            <param name="query">Nhibernate query</param>
+            <param name="currentPage">Current page</param>
+            <param name="pageSize">Page size</param>
+            <param name="records">Total records</param>
+            <returns>Data paging</returns>
+        </member>
+        <member name="M:Thunder.NHibernate.PagingExtensions.Paging``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32)">
+            <summary>
+            Paging data
+            </summary>
+            <typeparam name="T">{T}</typeparam>
+            <param name="source">Source</param>
+            <param name="currentPage">Current page</param>
+            <param name="pageSize">Page size</param>
+            <returns>Source paging</returns>
+        </member>
+        <member name="M:Thunder.NHibernate.PagingExtensions.Paging``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32,System.Int64)">
+            <summary>
+            Paging data
+            </summary>
+            <typeparam name="T">{T}</typeparam>
+            <param name="source">Source</param>
+            <param name="currentPage">Current page</param>
+            <param name="pageSize">Page size</param>
+            <param name="records">Records</param>
+            <returns>Source paging</returns>
+        </member>
+        <member name="M:Thunder.NHibernate.PagingExtensions.Paging``1(System.Linq.IQueryable{``0},System.Int32,System.Int32)">
+            <summary>
+            Paging data
+            </summary>
+            <typeparam name="T">{T}</typeparam>
+            <param name="source">Source</param>
+            <param name="currentPage">Current page</param>
+            <param name="pageSize">Page size</param>
+            <returns>Source paging</returns>
+        </member>
+        <member name="M:Thunder.NHibernate.PagingExtensions.Paging``1(System.Linq.IQueryable{``0},System.Int32,System.Int32,System.Int64)">
+            <summary>
+            Paging data
+            </summary>
+            <typeparam name="T">{T}</typeparam>
+            <param name="source">Source</param>
+            <param name="currentPage">Current page</param>
+            <param name="pageSize">Page size</param>
+            <param name="records">Records</param>
+            <returns>Source paging</returns>
+        </member>
+        <member name="T:Thunder.ComponentModel.DataAnnotations.UrlAttribute">
+            <summary>
+             Url Attribute
+            </summary>
+        </member>
+        <member name="M:Thunder.ComponentModel.DataAnnotations.UrlAttribute.#ctor">
+            <summary>
+             Initialize new instance of <see cref="T:Thunder.ComponentModel.DataAnnotations.UrlAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:Thunder.ComponentModel.DataAnnotations.UrlAttribute.#ctor(System.Boolean)">
+            <summary>
+            Initialize new instance of <see cref="T:Thunder.ComponentModel.DataAnnotations.UrlAttribute"/>.
+            </summary>
+            <param name="requireProtocol">Require protocol</param>
+        </member>
+        <member name="M:Thunder.ComponentModel.DataAnnotations.UrlAttribute.IsValid(System.Object)">
+            <summary>
+            IsValid
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Thunder.ComponentModel.DataAnnotations.UrlAttribute.Regex">
+            <summary>
+            Get regular expression
+            </summary>
+        </member>
+        <member name="T:Thunder.ComponentModel.DataAnnotations.EmailAttribute">
+            <summary>
+             E-mail validador
+            </summary>
+        </member>
+        <member name="M:Thunder.ComponentModel.DataAnnotations.EmailAttribute.#ctor">
+            <summary>
+            Initialize new instance of <see cref="T:Thunder.ComponentModel.DataAnnotations.EmailAttribute"/>.
+            </summary>
+        </member>
+        <member name="T:Thunder.ComponentModel.DataAnnotations.DocumentAttribute">
+            <summary>
+            Document validator
+            </summary>
+        </member>
+        <member name="M:Thunder.ComponentModel.DataAnnotations.DocumentAttribute.IsValid(System.Object)">
+            <summary>
+            IsValid
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="P:Thunder.ComponentModel.DataAnnotations.DocumentAttribute.Type">
+            <summary>
+             Document type
+            </summary>
+        </member>
+        <member name="T:Thunder.NHibernate.Dialect.MySQL5InnoDBDialect">
+            <summary>
+            Mysql InnoDb dialect
+            </summary>
+        </member>
+        <member name="P:Thunder.NHibernate.Dialect.MySQL5InnoDBDialect.SupportsCascadeDelete">
+            <summary>
+            Support cascade delete
+            </summary>
+        </member>
+        <member name="P:Thunder.NHibernate.Dialect.MySQL5InnoDBDialect.TableTypeString">
+            <summary>
+            Table tyle string
+            </summary>
+        </member>
+        <member name="P:Thunder.NHibernate.Dialect.MySQL5InnoDBDialect.HasSelfReferentialForeignKeyBug">
+            <summary>
+            Has self referential foreign key bug
+            </summary>
+        </member>
+        <member name="T:Thunder.ComponentModel.DataAnnotations.DateAttribute">
+            <summary>
+             Date validador
+            </summary>
+        </member>
+        <member name="M:Thunder.ComponentModel.DataAnnotations.DateAttribute.IsValid(System.Object)">
+            <summary>
+            IsValid
+            </summary>
+            <param name="value">Value</param>
+            <returns></returns>
+        </member>
+        <member name="T:Thunder.NHibernate.SessionPerRequest">
+            <summary>
+            NHibernate module for bind and unbind session per request
+            </summary>
+        </member>
+        <member name="M:Thunder.NHibernate.SessionPerRequest.Init(System.Web.HttpApplication)">
+            <summary>
+            Init module
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Thunder.NHibernate.SessionPerRequest.Dispose">
+            <summary>
+            Dispose
+            </summary>
+        </member>
+        <member name="M:Thunder.NHibernate.SessionPerRequest.BeginRequest(System.Object,System.EventArgs)">
+            <summary>
+            Begin request
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Thunder.NHibernate.SessionPerRequest.EndRequest(System.Object,System.EventArgs)">
+            <summary>
+            End request
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Thunder.NHibernate.SessionPerRequest.NeedPersistence(System.Web.HttpApplication)">
+            <summary>
+            Check need hibernate persistence
+            </summary>
+            <param name="application">Application</param>
+            <returns>Need persistence</returns>
+        </member>
+        <member name="P:Thunder.NHibernate.SessionPerRequest.StaticFiles">
+            <summary>
+            Get static files
+            </summary>
+        </member>
+        <member name="T:Thunder.Data.Collection`1">
+            <summary>
+            Collection paging
+            </summary>
+        </member>
+        <member name="M:Thunder.Data.Collection`1.#ctor(Thunder.Data.IPaging{`0})">
+            <summary>
+            Initialize new instance of <see cref="T:Thunder.Data.Collection`1"/>.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="P:Thunder.Data.Collection`1.CurrentPage">
+            <summary>
+            Get or set current page
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.Collection`1.Rows">
+             <summary>
+            Get or set rows
+             </summary>
+        </member>
+        <member name="P:Thunder.Data.Collection`1.PageCount">
+            <summary>
+            Get or set page count
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.Collection`1.Records">
+            <summary>
+            Get or set records
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.Collection`1.PageSize">
+            <summary>
+            Get or set page size
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.Collection`1.IsFirstPage">
+            <summary>
+            Get or set is firt page
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.Collection`1.IsLastPage">
+            <summary>
+            Get or set is last page
+            </summary>
+        </member>
+        <member name="T:Thunder.Message">
+            <summary>
+            Message
+            </summary>
+        </member>
+        <member name="M:Thunder.Message.#ctor(System.String)">
+            <summary>
+            Initialize a new instance of the class <see cref="T:Thunder.Message"/>.
+            </summary>
+            <param name="key">Key</param>
+        </member>
+        <member name="M:Thunder.Message.#ctor(System.String,System.Resources.ResourceManager)">
+            <summary>
+            Initialize a new instance of the class <see cref="T:Thunder.Message"/>.
+            </summary>
+            <param name="key">Key</param>
+            <param name="resourceManager"><see cref="T:System.Resources.ResourceManager"/></param>
+        </member>
+        <member name="M:Thunder.Message.#ctor(System.String,System.String,System.Resources.ResourceManager)">
+            <summary>
+            Initialize a new instance of the class <see cref="T:Thunder.Message"/>.
+            </summary>
+            <param name="key">Key</param>
+            <param name="field">Value</param>
+            <param name="resourceManager"><see cref="T:System.Resources.ResourceManager"/></param>
+        </member>
+        <member name="M:Thunder.Message.#ctor(System.String,System.String)">
+            <summary>
+            Initialize a new instance of the class <see cref="T:Thunder.Message"/>.
+            </summary>
+            <param name="key">Key</param>
+            <param name="field">Value</param>
+        </member>
+        <member name="P:Thunder.Message.Text">
+            <summary>
+            Get text message
+            </summary>
+        </member>
+        <member name="P:Thunder.Message.Field">
+            <summary>
+            Get field reference
+            </summary>
+        </member>
+        <member name="T:Thunder.NHibernate.DbUtil">
+            <summary>
+            Utility data base
+            </summary>
+        </member>
+        <member name="M:Thunder.NHibernate.DbUtil.#ctor(NHibernate.Cfg.Configuration)">
+            <summary>
+             Initialize new instance off class <see cref="T:Thunder.NHibernate.DbUtil"/>.
+            </summary>
+            <param name="configuration">Nhibernate configuration</param>
+        </member>
+        <member name="M:Thunder.NHibernate.DbUtil.Create">
+            <summary>
+            Create data base schema
+            </summary>
+        </member>
+        <member name="M:Thunder.NHibernate.DbUtil.Close(NHibernate.ISession)">
+            <summary>
+            Close NHibernate session
+            </summary>
+            <param name="session">Session</param>
+            <returns><see cref="T:Thunder.NHibernate.DbUtil"/></returns>
+        </member>
+        <member name="M:Thunder.NHibernate.DbUtil.Clear(System.Type)">
+            <summary>
+            Clear data of class type
+            </summary>
+            <param name="classType">Class Type</param>
+            <returns><see cref="T:Thunder.NHibernate.DbUtil"/></returns>
+        </member>
+        <member name="P:Thunder.NHibernate.DbUtil.Configuration">
+            <summary>
+            Get NHibernate configuration
+            </summary>
+        </member>
+        <member name="P:Thunder.NHibernate.DbUtil.Dialect">
+            <summary>
+            Get dialect
+            </summary>
+        </member>
+        <member name="T:Thunder.Data.IObjectState">
+            <summary>
+            Interface object state
+            </summary>
+        </member>
+        <member name="P:Thunder.Data.IObjectState.State">
+            <summary>
+            Get or set state object
+            </summary>
+        </member>
+        <member name="T:Thunder.ValidatorExtensions">
+            <summary>
+            Validator extensions
+            </summary>
+        </member>
+        <member name="M:Thunder.ValidatorExtensions.IsCpf(System.String)">
+            <summary>
+            Check cpf is valid
+            </summary>
+            <param name="cpf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.ValidatorExtensions.IsCnpj(System.String)">
+            <summary>
+            Check cnpj is valid
+            </summary>
+            <param name="cnpj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.ValidatorExtensions.IsEmail(System.String)">
+            <summary>
+            Check e-mail is valid
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.ValidatorExtensions.IsDate(System.String)">
+            <summary>
+            Check date is valid
+            </summary>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.ValidatorExtensions.IsHour(System.String)">
+            <summary>
+            Check hour is valid
+            </summary>
+            <param name="hour"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.ValidatorExtensions.IsYearBisixth(System.Int32)">
+            <summary>
+            Check year is bisixth
+            </summary>
+            <param name="year"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Thunder.Security.HashProvider">
+            <summary>
+            Enumerator provider for hash method
+            </summary>
+        </member>
+        <member name="F:Thunder.Security.HashProvider.SHA1">
+            <summary>
+            SHA1
+            </summary>
+        </member>
+        <member name="F:Thunder.Security.HashProvider.SHA256">
+            <summary>
+            SHA256
+            </summary>
+        </member>
+        <member name="F:Thunder.Security.HashProvider.SHA384">
+            <summary>
+            SHA384
+            </summary>
+        </member>
+        <member name="F:Thunder.Security.HashProvider.SHA512">
+            <summary>
+            SHA512
+            </summary>
+        </member>
+        <member name="F:Thunder.Security.HashProvider.MD5">
+            <summary>
+            MD5
+            </summary>
+        </member>
+        <member name="T:Thunder.Security.HashHelper">
+            <summary>
+            Security extensions
+            </summary>
+        </member>
+        <member name="M:Thunder.Security.HashHelper.Hash(System.String)">
+            <summary>
+            Get hash text with encoding ISO-8859-1 and SHA1 provider
+            </summary>
+            <param name="text">Text</param>
+            <returns>Hash</returns>
+        </member>
+        <member name="M:Thunder.Security.HashHelper.Hash(System.String,System.Text.Encoding)">
+            <summary>
+            Get hash text with encoding and SHA1 provider
+            </summary>
+            <param name="text">Text</param>
+            <param name="encoding">Encoding</param>
+            <returns>Hash</returns>
+        </member>
+        <member name="M:Thunder.Security.HashHelper.Hash(System.String,System.Text.Encoding,Thunder.Security.HashProvider)">
+            <summary>
+            Get hash text with encoding and provider
+            </summary>
+            <param name="text">Text</param>
+            <param name="encoding">Encoding</param>
+            <param name="provider">Provider</param>
+            <returns>Hash</returns>
+        </member>
+        <member name="T:Thunder.Security.CryptographyHelper">
+            <summary>
+            Security extensions
+            </summary>
+        </member>
+        <member name="M:Thunder.Security.CryptographyHelper.Encrypt(System.String,System.String)">
+            <summary>
+            Encripty text with encoding ISO-8859-1 and Rijndael provider
+            </summary>
+            <param name="text">Text</param>
+            <param name="key">Key</param>
+            <returns>Text</returns>
+        </member>
+        <member name="M:Thunder.Security.CryptographyHelper.Encrypt(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Encripty text with encoding and Rijndael provider
+            </summary>
+            <param name="text">Text</param>
+            <param name="key">Key</param>
+            <param name="encoding">Encoding</param>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.Security.CryptographyHelper.Encrypt(System.String,System.String,System.Text.Encoding,Thunder.Security.CryptographyProvider)">
+            <summary>
+            Encripty text with encoding and provider
+            </summary>
+            <param name="text">Text</param>
+            <param name="key">Key</param>
+            <param name="encoding">Encoding</param>
+            <param name="provider">Provider</param>
+            <returns>Text</returns>
+        </member>
+        <member name="M:Thunder.Security.CryptographyHelper.Decrypt(System.String,System.String)">
+            <summary>
+            Decrypt text with encoding ISO-8859-1 and Rijndael provider
+            </summary>
+            <param name="text">Text</param>
+            <param name="key">Key</param>
+            <returns>Text</returns>
+        </member>
+        <member name="M:Thunder.Security.CryptographyHelper.Decrypt(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Decrypt text with encoding and Rijndael provider
+            </summary>
+            <param name="text">Text</param>
+            <param name="key">Key</param>
+            <param name="encoding">Encoding</param>
+            <returns>Text</returns>
+        </member>
+        <member name="M:Thunder.Security.CryptographyHelper.Decrypt(System.String,System.String,System.Text.Encoding,Thunder.Security.CryptographyProvider)">
+            <summary>
+            Decrypt text with encoding and provider
+            </summary>
+            <param name="text">Text</param>
+            <param name="key">Key</param>
+            <param name="encoding">Encoding</param>
+            <param name="provider">Provider</param>
+            <returns>Text</returns>
+        </member>
+        <member name="T:Thunder.NHibernate.Proxy">
+            <summary>
+            Hibernate proxy extension
+            </summary>
+        </member>
+        <member name="M:Thunder.NHibernate.Proxy.Unproxy``1(``0)">
+            <summary>
+             Unproxy 
+            </summary>
+            <param name="entity">Entity</param>
+            <typeparam name="T">Type</typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Thunder.Security.Domain.IUser">
+            <summary>
+            User interface
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.IUser.Id">
+            <summary>
+            Get or set user id
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.IUser.Name">
+            <summary>
+            Get or set user name
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.IUser.Login">
+            <summary>
+            Get or set user login
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.IUser.Email">
+            <summary>
+            Get or set user e-mail
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.IUser.Areas">
+            <summary>
+            Get or set areas that the user has access
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.IUser.Password">
+            <summary>
+            Get or set user password
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.IUser.Active">
+            <summary>
+            Get or set indication whether the user is active
+            </summary>
+        </member>
+        <member name="T:Thunder.Security.Domain.User">
+            <summary>
+            User
+            </summary>
+        </member>
+        <member name="M:Thunder.Security.Domain.User.#ctor">
+            <summary>
+            Initialize a new instance of the class <see cref="T:Thunder.Security.Domain.User"/>.
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.User.Id">
+            <summary>
+            Get or set user id
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.User.Name">
+            <summary>
+            Get or set user name
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.User.Login">
+            <summary>
+            Get or set user login
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.User.Email">
+            <summary>
+            Get or set user e-mail
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.User.Areas">
+            <summary>
+            Get or set areas that the user has access
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.User.Password">
+            <summary>
+            Get or set user password
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.User.Active">
+            <summary>
+            Get or set indication whether the user is active
+            </summary>
+        </member>
+        <member name="T:Thunder.Security.Domain.IArea">
+            <summary>
+            Area interface
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.IArea.Id">
+            <summary>
+            Get or set area id
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.IArea.Parent">
+            <summary>
+            Get or set parent area
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.IArea.Name">
+            <summary>
+            Get or set area name
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.IArea.Url">
+            <summary>
+            Get or set area url
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.IArea.Childs">
+            <summary>
+            Get or set area childs
+            </summary>
+        </member>
+        <member name="T:Thunder.Security.Domain.Area">
+            <summary>
+            Area
+            </summary>
+        </member>
+        <member name="M:Thunder.Security.Domain.Area.#ctor">
+            <summary>
+            Initialize a new instance of the class <see cref="T:Thunder.Security.Domain.Area"/>.
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.Area.Id">
+            <summary>
+            Get or set area id
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.Area.Parent">
+            <summary>
+            Get or set area module
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.Area.Name">
+            <summary>
+            Get or set area name
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.Area.Url">
+            <summary>
+            Get or set area url
+            </summary>
+        </member>
+        <member name="P:Thunder.Security.Domain.Area.Childs">
+            <summary>
+            Get or set area childs
+            </summary>
+        </member>
+        <member name="T:Thunder.Web.ResultStatus">
+            <summary>
+            Result status
+            </summary>
+        </member>
+        <member name="F:Thunder.Web.ResultStatus.Success">
+            <summary>
+            Success
+            </summary>
+        </member>
+        <member name="F:Thunder.Web.ResultStatus.Unauthorized">
+            <summary>
+            Unauthorized
+            </summary>
+        </member>
+        <member name="F:Thunder.Web.ResultStatus.Error">
+            <summary>
+            Error
+            </summary>
+        </member>
+        <member name="F:Thunder.Web.ResultStatus.Information">
+            <summary>
+            Information
+            </summary>
+        </member>
+        <member name="F:Thunder.Web.ResultStatus.Attention">
+            <summary>
+            Attention
+            </summary>
+        </member>
+        <member name="F:Thunder.Web.ResultStatus.NotConnected">
+            <summary>
+            Not connected
+            </summary>
+        </member>
+        <member name="T:Thunder.Web.Model">
+            <summary>
+            Model data
+            </summary>
+        </member>
+        <member name="T:Thunder.Web.IModel">
+            <summary>
+            Interface of view model
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.IModel.Status">
+            <summary>
+            Get or set status of result
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.IModel.Messages">
+            <summary>
+            Get or set messages collection
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Model.Status">
+            <summary>
+            Get or set status of result
+            </summary>
+        </member>
+        <member name="P:Thunder.Web.Model.Messages">
+            <summary>
+            Get or set messages collection
+            </summary>
+        </member>
+        <member name="T:Thunder.Web.JsonExtensions">
+            <summary>
+            Json extensions
+            </summary>
+        </member>
+        <member name="M:Thunder.Web.JsonExtensions.Json(System.Object)">
+            <summary>
+            Convert an object to a JSON string
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Thunder.Web.JsonExtensions.Json``1(System.String)">
+            <summary>
+            Converts the specified JSON string to an object of type
+            </summary>
+            <typeparam name="T">Type</typeparam>
+            <param name="input">Input</param>
+            <returns>Object</returns>
+        </member>
+    </members>
+</doc>
