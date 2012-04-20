@@ -10,4 +10,5 @@ Debug
 Release
 reports*.xml
 *.dotCover
+packages
 .DS_Store

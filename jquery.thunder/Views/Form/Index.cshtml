@@ -2,22 +2,29 @@
     Ajax em formulários</h2>
 <script type="text/javascript">
     $(function () {
-        $('#form-json').ajaxForm({
-            onSuccess: function (form) {
-                form.data('message').message('success', 'Registro salvo com sucesso!');
-            }
-        });
+//        $('#form-json').ajaxForm({
+//            onSuccess: function (form) {
+//                form.data('message').message('success', 'Registro salvo com sucesso!');
+//            }
+//        });
 
         $('#form-html').ajaxForm({
             onSuccess: function (form) {
                 form.data('message').message('success', 'Registro salvo com sucesso!');
             }
         });
+
     });
+
+    function teste (form, r) {
+        alert(r);
+    };
+
+
 </script>
 <h3>
     Exemplo 1 - Retornando json</h3>
-<form id="form-json" method="POST" action="@Url.Content("~/form/json")">
+<form id="form-json" data-ajax="true" data-ajax-success="teste" method="POST" action="@Url.Content("~/form/json")">
 <p>
     <label>
         Nome</label>

@@ -10,16 +10,16 @@ else
         <thead>
             <tr>
                 <th>
-                    Código
+                    <a href="#" class="thunder-grid-order" data-column="Id" data-asc="false">Código</a>
                 </th>
                 <th>
-                    Nome
+                    <a href="#" class="thunder-grid-order" data-column="Name" data-asc="false">Nome</a>
                 </th>
                 <th>
-                    E-mail
+                    <a href="#" class="thunder-grid-order" data-column="Email" data-asc="true">E-mail</a>
                 </th>
                 <th>
-                    Data de Nascimento
+                    <a href="#" class="thunder-grid-order" data-column="BirthDate" data-asc="true">Data de Nascimento</a>
                 </th>
             </tr>
         </thead>
@@ -41,15 +41,15 @@ else
         <tfoot>
             <tr>
                 <td colspan="4">
-                    <a href="#" class="paged @(!Model.HasPreviousPage? "disabled" : "")" data-page="@(Model.HasPreviousPage ? Model.CurrentPage-1: -1)">&laquo;</a>
-                    <select  class="paged">
+                    <a href="#" class="thunder-grid-paged @(!Model.HasPreviousPage? "disabled" : "")" data-page="@(Model.HasPreviousPage ? Model.CurrentPage-1: -1)">&laquo;</a>
+                    <select  class="thunder-grid-paged">
                         @for (var i = 0; i < Model.PageCount; i++)
                         {
                             <option value="@i" @(Model.CurrentPage.Equals(i) ? "selected=selected" : "")>@string.Format("Página {0} de {1}", (i + 1), Model.PageCount)</option>   
                         }
                     </select>
-                    <a href="#" class="paged @(!Model.HasNextPage? "disabled" : "")" data-page="@(Model.HasNextPage ? Model.CurrentPage+1: -1)">&raquo;</a>
-                    <span class="paged-loading" style="display: none;">Carregando</span>
+                    <a href="#" class="thunder-grid-paged @(!Model.HasNextPage? "disabled" : "")" data-page="@(Model.HasNextPage ? Model.CurrentPage+1: -1)">&raquo;</a>
+                    <span class="thunder-paged-loading" style="display: none;">Carregando</span>
                 </td>
             </tr>
         </tfoot>

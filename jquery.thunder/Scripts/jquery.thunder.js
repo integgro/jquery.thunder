@@ -292,14 +292,14 @@
 
         var paginate = function (currentPage) {
             $('input:hidden[name="CurrentPage"]', $form).val(currentPage);
-            load($('.paged-loading', $grid));
+            load($('.thunder-paged-loading', $grid));
         };
 
         if (settings.load) {
             load($loading);
         }
 
-        $('a.paged', $grid).live('click', function (e) {
+        $('a.thunder-grid-paged', $grid).live('click', function (e) {
             var $this = $(this);
             if (!$this.is('.disabled')) {
                 paginate($this.data('page'));
@@ -307,7 +307,17 @@
             e.preventDefault();
         });
 
-        $('select.paged', $grid).live('change', function () {
+        $('a.thunder-grid-order', $grid).live('click', function (e) {
+            var $this = $(this);
+            if ($this.data('column') != 'undefined' && $this.data('asc') != 'undefined') {
+                $form.setOrders([{ 'Column': $this.data('column'), 'Asc': $this.data('asc')}]);
+                $('input:hidden[name="CurrentPage"]', $form).val(0);
+                load($loading);
+            }
+            e.preventDefault();
+        });
+
+        $('select.thunder-grid-paged', $grid).live('change', function () {
             var $this = $(this);
             paginate($('option:selected', $this).val());
         });
@@ -316,7 +326,7 @@
     $.fn.setOrders = function (orders) {
         return this.each(function () {
             var $this = $(this);
-            $('.thunder-grid-order', $this).remove();
+            $('input.thunder-grid-order', $this).remove();
             $.each(orders, function (i) {
                 $this.append('<input type="hidden" class="thunder-grid-order" name="Orders[' + i + '].Column" value="' + this.Column + '" />');
                 $this.append('<input type="hidden" class="thunder-grid-order" name="Orders[' + i + '].Asc" value="' + this.Asc + '" />');
