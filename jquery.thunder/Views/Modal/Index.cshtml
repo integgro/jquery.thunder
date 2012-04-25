@@ -1,6 +1,10 @@
 ﻿<h2>Modal</h2>
 <script type="text/javascript">
     $(function () {
-        $.modal({url: '@Url.Content("~/modal/iframe")'});
+        $('a').click(function (e) {
+            $.modal({ url: '@Url.Content("~/modal/iframe")' });
+            e.preventDefault();
+        });
     });
 </script>
+<a href="#">Abrir</a>
