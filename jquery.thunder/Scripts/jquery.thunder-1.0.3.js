@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.0.2',
+        version: '1.0.3',
         message: {
             animate: true,
             focus: false,
@@ -326,6 +326,7 @@
     $.modal = function (options) {
         var settings = $.extend({
             iframe: false,
+            iframeScroll: 'no',
             url: '',
             width: 600,
             resizable: false,
@@ -360,11 +361,12 @@
                 if (settings.iframe) {
                     var $iframe = $('<iframe frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>');
 
+                    $iframe.attr('scrolling', settings.iframeScroll);
                     $iframe.attr('src', settings.url);
                     $iframe.attr('width', $modal.width());
                     $iframe.attr('height', $modal.height());
 
-                    $modal.css('overflow', 'hidden !important');
+                    $modal.css('overflow', 'hidden');
                     $modal.html($iframe);
 
                     $iframe.load(function () {

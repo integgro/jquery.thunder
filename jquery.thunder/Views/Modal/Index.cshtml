@@ -2,7 +2,7 @@
 <script type="text/javascript">
     $(function () {
         $('a').click(function (e) {
-            $.modal({ url: '@Url.Content("~/modal/iframe")' });
+            $.modal({ iframe: true, url: '@Url.Content("~/modal/iframe")', height: 300 });
             e.preventDefault();
         });
     });
