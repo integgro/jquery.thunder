@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.0.3',
+        version: '1.0.4',
         message: {
             animate: true,
             focus: false,
@@ -298,6 +298,12 @@
         if (settings.load) {
             load($loading);
         }
+
+        $form.submit(function () {
+            $('input:hidden[name="CurrentPage"]', $form).val(0);
+            load($loading);
+            return false;
+        });
 
         $('a.thunder-grid-paged', $grid).live('click', function (e) {
             var $this = $(this);
