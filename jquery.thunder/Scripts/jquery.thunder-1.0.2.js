@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.0',
+        version: '1.0.2',
         message: {
             animate: true,
             focus: false,
@@ -330,6 +330,7 @@
             width: 600,
             resizable: false,
             draggable: false,
+            cssClass: '',
             onOpen: function () {
             },
             onClose: function () {
@@ -341,8 +342,12 @@
             return;
         }
 
-        $('body').prepend('<div class="thunder-modal"></div>');
-        var $modal = $('.thunder-modal', $('body'));
+        if ($('.thunder-modal').size() == 0) {
+            $('body').prepend('<div class="thunder-modal"></div>');
+        }
+
+        var $modal = $('.thunder-modal', $('body'))
+            .addClass(settings.cssClass);
 
         window.modalInstance = $modal;
 
@@ -354,10 +359,12 @@
 
                 if (settings.iframe) {
                     var $iframe = $('<iframe frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>');
+
                     $iframe.attr('src', settings.url);
                     $iframe.attr('width', $modal.width());
-                    $iframe.attr('hieght', $modal.height());
-                    
+                    $iframe.attr('height', $modal.height());
+
+                    $modal.css('overflow', 'hidden !important');
                     $modal.html($iframe);
 
                     $iframe.load(function () {
@@ -383,6 +390,7 @@
             },
             beforeClose: function () {
                 settings.onClose($modal);
+                $modal.empty();
                 $modal.dialog('destroy');
             }
         }, settings));
