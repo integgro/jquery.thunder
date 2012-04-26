@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.0.4',
+        version: '1.0.5',
         message: {
             animate: true,
             focus: false,
@@ -246,11 +246,6 @@
             $message = $grid.prev('.thunder-grid-message');
         }
 
-        if ($loading.size() == 0) {
-            $content.html('<div class="thunder-grid-loading"></div>');
-            $loading = $('.thunder-grid-loading', $content);
-        }
-
         if ($form.size() == 0) {
             $grid.prepend('<form class="thunder-grid-form"></form>');
             $form = $('.thunder-grid-form', $grid);
@@ -260,12 +255,19 @@
         $form.append('<input type="hidden" name="PageSize" value="' + settings.pageSize + '" />');
         $form.setOrders(settings.orders);
 
-        $loading.hide();
-
         if (!settings.url || settings.url == '') {
             $message.message('error', 'Url is null.');
             return;
         }
+
+        var createLoading = function () {
+            if ($(settings.loading).size() == 0) {
+                $content.html('<div class="thunder-grid-loading"></div>');
+                $loading = $('.thunder-grid-loading', $content);
+            }
+
+            $loading.hide();
+        };
 
         var load = function (loading) {
             $.ajax({
@@ -296,11 +298,13 @@
         };
 
         if (settings.load) {
+            createLoading();
             load($loading);
         }
 
         $form.submit(function () {
             $('input:hidden[name="CurrentPage"]', $form).val(0);
+            createLoading();
             load($loading);
             return false;
         });
