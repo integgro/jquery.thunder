@@ -2,7 +2,10 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.0.6'
+        version: '1.0.6',
+        images: {
+            loadingModal: 'content/jquery.thunder/images/loading_modal.gif'
+        }
     };
 
     var methods = {
@@ -256,7 +259,7 @@
 
         var load = function (loading) {
             settings.onBeforeSubmit();
-            
+
             $.ajax({
                 statusCode: statusCode($message),
                 type: 'POST',
@@ -366,13 +369,19 @@
                     $modal.css('overflow', 'hidden');
                     $modal.html($iframe);
 
+                    console.log($iframe.contents()[0]);
+
+                    window.setTimeout(function() {
+                        $('body', $iframe.contents()[0]).html('<img src="' + $.thunder.settings.images.loadingModal + '" class="thunder-modal-loading" />');
+                    }, 100);
+
                     $iframe.load(function () {
                         settings.onOpen($($iframe.contents()[0]));
                         $('.thunder-modal-close', $($iframe.contents()[0])).live('click', function (e) {
                             e.preventDefault();
                             $.closeModal();
                         });
-                    });
+                    });    
                 } else {
                     $modal.append('<div class="thunder-modal-message"></div>')
                           .append('<img src="content/jquery.thunder/images/loading.gif" class="thunder-modal-loading" />');
