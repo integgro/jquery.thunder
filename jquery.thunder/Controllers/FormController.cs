@@ -23,7 +23,7 @@ namespace Jquery.Thunder.Controllers
                 return new JsonResult
                 {
                     Status = ResultStatus.Attention,
-                    Messages = new List<Message> { new Message("Preencha o campo nome") }
+                    Messages = new List<Message> { new Message("Preencha o campo nome", "name") }
                 };
             }
 

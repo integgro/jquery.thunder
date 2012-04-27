@@ -119,6 +119,7 @@
             message: null,
             loading: null,
             disableElements: 'input,select,textarea,button',
+            cssFieldError: 'thunder-form-field-error',
             onSuccess: function () {
             },
             onBefore: function () {
@@ -164,6 +165,7 @@
                 data: $form.serialize(),
                 beforeSend: function () {
                     $(settings.disableElements, $form).disableElement();
+                    $('input,select,textarea', $form).removeClass(settings.cssFieldError);
                     $loading.show();
                     settings.onBefore();
                 },
@@ -188,6 +190,9 @@
                                         } else if (r.Status == 204) {
                                             $message.message('attention', r.Messages);
                                         }
+                                        $.each(r.Messages, function () {
+                                            $('input[name="' + this.Field + '"],select[name="' + this.Field + '"],textarea[name="' + this.Field + '"]').addClass(settings.cssFieldError);
+                                        });
                                     } else {
                                         $message.message('error', 'Message no exist in request result.');
                                     }
@@ -372,7 +377,7 @@
                         }
                         settings.url += 'nocache=' + parseInt(Math.random() * 9999999999);
                     }
-                    
+
                     $iframe.attr('scrolling', settings.iframeScroll);
                     $iframe.attr('width', $modal.width());
                     $iframe.attr('height', $modal.height());
@@ -381,7 +386,7 @@
                     $modal.html($iframe);
 
                     $('body', $iframe.contents()[0]).html('<img src="' + $.thunder.settings.images.loadingModal + '" class="thunder-modal-loading" />');
-                    
+
                     $iframe.attr('src', settings.url);
                     $iframe.load(function () {
                         settings.onOpen($($iframe.contents()[0]));
@@ -389,7 +394,7 @@
                             e.preventDefault();
                             $.closeModal();
                         });
-                    });   
+                    });
                 } else {
                     $modal.append('<div class="thunder-modal-message"></div>')
                           .append('<img src="' + $.thunder.settings.images.loadingModal + '" class="thunder-modal-loading" />');

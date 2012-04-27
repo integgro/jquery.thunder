@@ -68,6 +68,10 @@
     height: 22px;
 }
 
+.thunder-form-field-error {
+    border-left: solid 2px red;
+}
+
 .thunder-grid-loading {
     position: relative;
     background: url(images/loading_grid.gif);
