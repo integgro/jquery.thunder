@@ -63,14 +63,14 @@
 {
     position: relative;
     display: block;
-    background: url(images/loading.gif);
+    background: url(images/loading_form.gif);
     width: 22px;
     height: 22px;
 }
 
 .thunder-grid-loading {
     position: relative;
-    background: url(images/loading.gif);
+    background: url(images/loading_grid.gif);
     width: 22px;
     height: 22px;
 }

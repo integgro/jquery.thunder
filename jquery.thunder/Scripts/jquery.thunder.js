@@ -4,7 +4,9 @@
     $.thunder.settings = {
         version: '1.0.6',
         images: {
-            loadingModal: 'content/jquery.thunder/images/loading_modal.gif'
+            loadingModal: 'content/jquery.thunder/images/loading_modal.gif',
+            loadingGrid: 'content/jquery.thunder/images/loading_grid.gif',
+            loadingForm: 'content/jquery.thunder/images/loading_form.gif'
         }
     };
 
@@ -384,7 +386,7 @@
                     });    
                 } else {
                     $modal.append('<div class="thunder-modal-message"></div>')
-                          .append('<img src="content/jquery.thunder/images/loading.gif" class="thunder-modal-loading" />');
+                          .append('<img src="' + $.thunder.settings.images.loadingModal + '" class="thunder-modal-loading" />');
                     $.ajax({
                         statusCode: statusCode($('.thunder-modal-message', $modal), { close: { show: false} }),
                         headers: { 'Thunder-Ajax': true, 'Thunder-Modal': true },
