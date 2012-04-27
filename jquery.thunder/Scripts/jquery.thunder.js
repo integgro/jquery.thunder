@@ -4,9 +4,9 @@
     $.thunder.settings = {
         version: '1.0.6',
         images: {
-            loadingModal: 'content/jquery.thunder/images/loading_modal.gif',
-            loadingGrid: 'content/jquery.thunder/images/loading_grid.gif',
-            loadingForm: 'content/jquery.thunder/images/loading_form.gif'
+            loadingModal: '/content/jquery.thunder/images/loading_modal.gif',
+            loadingGrid: '/content/jquery.thunder/images/loading_grid.gif',
+            loadingForm: '/content/jquery.thunder/images/loading_form.gif'
         }
     };
 
@@ -334,6 +334,7 @@
             resizable: false,
             draggable: false,
             cssClass: '',
+            noCache: true,
             onOpen: function () {
             },
             onClose: function () {
@@ -363,27 +364,32 @@
                 if (settings.iframe) {
                     var $iframe = $('<iframe frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>');
 
+                    if (settings.noCache) {
+                        if (settings.url.lastIndexOf('?') != -1) {
+                            settings.url += '&';
+                        } else {
+                            settings.url += '?';
+                        }
+                        settings.url += 'nocache=' + parseInt(Math.random() * 9999999999);
+                    }
+                    
                     $iframe.attr('scrolling', settings.iframeScroll);
-                    $iframe.attr('src', settings.url);
                     $iframe.attr('width', $modal.width());
                     $iframe.attr('height', $modal.height());
 
                     $modal.css('overflow', 'hidden');
                     $modal.html($iframe);
 
-                    console.log($iframe.contents()[0]);
-
-                    window.setTimeout(function() {
-                        $('body', $iframe.contents()[0]).html('<img src="' + $.thunder.settings.images.loadingModal + '" class="thunder-modal-loading" />');
-                    }, 100);
-
+                    $('body', $iframe.contents()[0]).html('<img src="' + $.thunder.settings.images.loadingModal + '" class="thunder-modal-loading" />');
+                    
+                    $iframe.attr('src', settings.url);
                     $iframe.load(function () {
                         settings.onOpen($($iframe.contents()[0]));
                         $('.thunder-modal-close', $($iframe.contents()[0])).live('click', function (e) {
                             e.preventDefault();
                             $.closeModal();
                         });
-                    });    
+                    });   
                 } else {
                     $modal.append('<div class="thunder-modal-message"></div>')
                           .append('<img src="' + $.thunder.settings.images.loadingModal + '" class="thunder-modal-loading" />');
