@@ -2,7 +2,9 @@
     Grid</h2>
 <script type="text/javascript">
     $(function () {
-        $('#grid1').grid();
+        $('#grid1').grid({
+            form: $('form')
+        });
     });
 </script>
 <div id="grid1" data-url="@Url.Content("~/grid/data")"></div>

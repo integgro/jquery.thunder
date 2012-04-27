@@ -2,24 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.0.5',
-        message: {
-            animate: true,
-            focus: false,
-            close: {
-                show: true,
-                title: 'Close this notification'
-            }
-        },
-        form: {
-            message: {
-                selector: null
-            },
-            loading: {
-                selector: null
-            },
-            disableElementsBeforeSending: true
-        }
+        version: '1.0.6'
     };
 
     var methods = {
@@ -232,6 +215,8 @@
             load: !$grid.data('load') ? true : $grid.data('load'),
             orders: [],
             onComplete: function () {
+            },
+            onBeforeSubmit: function () {
             }
         }, options);
         var $message = $(settings.message);
@@ -270,6 +255,8 @@
         };
 
         var load = function (loading) {
+            settings.onBeforeSubmit();
+            
             $.ajax({
                 statusCode: statusCode($message),
                 type: 'POST',
