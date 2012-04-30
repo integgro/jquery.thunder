@@ -79,6 +79,10 @@
     height: 22px;
 }
 
+.thunder-modal-loading {
+    display: none;
+}
+
 .ui-widget-overlay {
     position: absolute; 
     top: 0; left: 0; 

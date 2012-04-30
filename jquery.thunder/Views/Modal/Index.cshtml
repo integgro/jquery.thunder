@@ -1,14 +1,8 @@
 ﻿<h2>Modal</h2>
 <script type="text/javascript">
     $(function () {
-        $('a').click(function (e) {
-            $.modal({
-                iframe: true,
-                url: '@Url.Content("~/modal/iframe")',
-                height: 300
-            });
-            e.preventDefault();
-        });
+        $('a').modal();
     });
 </script>
-<a href="#">Abrir</a>
+<a href="@Url.Content("~/modal/iframe")" data-iframe="true" data-height="300">iFrame</a>
+<a href="@Url.Content("~/modal/ajax")">Ajax</a>

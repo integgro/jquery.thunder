@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.0.6',
+        version: '1.0.7',
         images: {
             loadingModal: '/content/jquery.thunder/images/loading_modal.gif',
             loadingGrid: '/content/jquery.thunder/images/loading_grid.gif',
@@ -330,14 +330,13 @@
         });
     };
 
-    $.modal = function (options) {
+    $.fn.modal = function (options) {
         var settings = $.extend({
             iframe: false,
             iframeScroll: 'no',
             url: '',
             width: 600,
-            resizable: false,
-            draggable: false,
+            centerLoading: true,
             cssClass: '',
             noCache: true,
             onOpen: function () {
@@ -345,6 +344,44 @@
             onClose: function () {
             }
         }, options);
+        
+        return this.each(function () {
+            var $this = $(this);
+
+            $.extend(settings, {
+                iframe: ($this.data('iframe') != undefined ? $this.data('iframe') : settings.iframe),
+                iframeScroll: ($this.data('iframe-scroll') != undefined ? $this.data('iframe-scroll') : settings.iframeScroll),
+                url: ($this.is('a') ? $this.attr('href') : settings.url),
+                width: ($this.data('width') != undefined ? $this.data('width') : settings.width),
+                height: ($this.data('height') != undefined ? $this.data('height') : settings.height),
+                centerLoading: ($this.data('center-loading') != undefined ? $this.data('center-loading') : settings.centerLoading),
+                cssClass: ($this.data('css-class') != undefined ? $this.data('css-class') : settings.cssClass),
+                noCache: ($this.data('no-cache') != undefined ? $this.data('no-cache') : settings.noCache)
+            });
+            
+
+            $this.live('click', function (e) {
+                $.modal(settings);
+                e.preventDefault();
+            });
+        });
+    };
+
+    $.modal = function (options) {
+        var settings = $.extend({
+            iframe: false,
+            iframeScroll: 'no',
+            url: '',
+            width: 600,
+            centerLoading: true,
+            cssClass: '',
+            noCache: true,
+            onOpen: function () {
+            },
+            onClose: function () {
+            }
+        }, options);
+        var $loading = '<div class="thunder-modal-loading"><img src="' + $.thunder.settings.images.loadingModal + '" /></div>';
 
         if ($('body')['dialog'] == undefined) {
             $.error('This project not implement jquery.ui.');
@@ -360,11 +397,31 @@
 
         window.modalInstance = $modal;
 
-        $modal.dialog($.extend({
+        $modal.dialog($.extend(settings, {
             autoOpen: true,
             modal: true,
+            resizable: false,
+            draggable: false,
             open: function () {
                 $('.ui-dialog-titlebar ').remove();
+
+                $modal.empty();
+                $modal.append($loading);
+                $loading = $('.thunder-modal-loading', $modal);
+
+                if (settings.centerLoading) {
+                    $($('img', $loading)).load(function () {
+                        $loading.css({
+                            'position': 'absolute',
+                            'top': '50%',
+                            'left': '50%',
+                            'margin-left': '-' + ($(this).width() / 2) + 'px',
+                            'margin-top': '-' + ($(this).height() / 2) + 'px'
+                        });
+                    });
+                }
+
+                $loading.show();
 
                 if (settings.iframe) {
                     var $iframe = $('<iframe frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>');
@@ -383,21 +440,21 @@
                     $iframe.attr('height', $modal.height());
 
                     $modal.css('overflow', 'hidden');
-                    $modal.html($iframe);
-
-                    $('body', $iframe.contents()[0]).html('<img src="' + $.thunder.settings.images.loadingModal + '" class="thunder-modal-loading" />');
+                    $modal.append($iframe);
 
                     $iframe.attr('src', settings.url);
                     $iframe.load(function () {
-                        settings.onOpen($($iframe.contents()[0]));
+                        settings.onOpen($($iframe.contents()[0])    );
+
+                        $loading.remove();
+
                         $('.thunder-modal-close', $($iframe.contents()[0])).live('click', function (e) {
                             e.preventDefault();
                             $.closeModal();
                         });
                     });
                 } else {
-                    $modal.append('<div class="thunder-modal-message"></div>')
-                          .append('<img src="' + $.thunder.settings.images.loadingModal + '" class="thunder-modal-loading" />');
+                    $modal.append('<div class="thunder-modal-message"></div>');
                     $.ajax({
                         statusCode: statusCode($('.thunder-modal-message', $modal), { close: { show: false} }),
                         headers: { 'Thunder-Ajax': true, 'Thunder-Modal': true },
@@ -414,7 +471,7 @@
                 $modal.empty();
                 $modal.dialog('destroy');
             }
-        }, settings));
+        }));
     };
 
     $.closeModal = function () {
