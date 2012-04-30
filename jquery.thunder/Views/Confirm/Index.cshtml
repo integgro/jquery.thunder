@@ -1,0 +1,21 @@
+﻿<h2>Modal</h2>
+<script type="text/javascript">
+    $(function () {
+        $.thunder.settings.confirm.label.yes = 'Sim';
+        $.thunder.settings.confirm.label.no = 'Não';
+        
+        $('a').click(function (e) {
+            $.confirm('Deseja realmente excluir esse registro adfasdfasdfas asdfasdfdas asdfasdfadsf asdfadsf?', {
+                onYes: function () {
+                    console.log('yes');
+                },
+                onNo: function () {
+                    console.log('no');
+                }
+            });
+            e.preventDefault();
+        });
+
+    });
+</script>
+<a href="#">Confirmação</a>
