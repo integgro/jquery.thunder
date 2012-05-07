@@ -1,8 +1,8 @@
 ﻿<h2>Modal</h2>
 <script type="text/javascript">
     $(function () {
-        $('a').modal();
+        $('#link').modal();
     });
 </script>
-<a href="@Url.Content("~/modal/iframe")" data-iframe="true" data-height="300">iFrame</a>
+<a href="@Url.Content("~/modal/iframe")" id="link" data-iframe="true" data-height="300">iFrame</a>
 <a href="@Url.Content("~/modal/ajax")">Ajax</a>

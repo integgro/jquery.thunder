@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.0.7',
+        version: '1.0.8',
         images: {
             loadingModal: '/content/jquery.thunder/images/loading_modal.gif',
             loadingGrid: '/content/jquery.thunder/images/loading_grid.gif',
@@ -454,8 +454,6 @@
         var $modal = $('.thunder-modal', $('body'))
             .addClass(settings.cssClass);
 
-        window.modalInstance = $modal;
-
         $modal.dialog($.extend(settings, {
             autoOpen: true,
             modal: true,
@@ -476,11 +474,11 @@
                             'left': '50%',
                             'margin-left': '-' + ($(this).width() / 2) + 'px',
                             'margin-top': '-' + ($(this).height() / 2) + 'px'
-                        });
+                        }).show();
                     });
+                } else {
+                    $loading.show();
                 }
-
-                $loading.show();
 
                 if (settings.iframe) {
                     var $iframe = $('<iframe frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>');
@@ -507,9 +505,9 @@
 
                         $loading.remove();
 
-                        $('.thunder-modal-close', $($iframe.contents()[0])).live('click', function (e) {
+                        $('.thunder-modal-close', $($iframe.contents()[0])).click(function (e) {
                             e.preventDefault();
-                            $.closeModal();
+                            $modal.dialog('close');
                         });
                     });
                 } else {
@@ -520,6 +518,10 @@
                         url: settings.url,
                         success: function (html) {
                             $modal.html(html);
+                            $('.thunder-modal-close', $modal).click(function (e) {
+                                e.preventDefault();
+                                $modal.dialog('close');
+                            });
                             settings.onOpen($modal);
                         }
                     });
@@ -531,12 +533,6 @@
                 $modal.dialog('destroy');
             }
         }));
-    };
-
-    $.closeModal = function () {
-        if (window.modalInstance) {
-            window.modalInstance.dialog('close');
-        }
     };
 
     $.fn.setOrders = function (orders) {
@@ -661,11 +657,6 @@
                     }
                 });
             }
-        });
-
-        $('.thunder-modal-close').live('click', function (e) {
-            e.preventDefault();
-            $.closeModal();
         });
     });
 
