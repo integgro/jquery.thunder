@@ -260,7 +260,7 @@
 
         var createLoading = function () {
             if ($(settings.loading).size() == 0) {
-                $content.html('<div class="thunder-grid-loading"></div>');
+                $content.html('<div class="thunder-grid-loading"><img src="' + $.thunder.settings.images.loadingGrid + '" /></div>');
                 $loading = $('.thunder-grid-loading', $content);
             }
 
