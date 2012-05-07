@@ -260,7 +260,7 @@
 
         var createLoading = function () {
             if ($(settings.loading).size() == 0) {
-                $content.html('<div class="thunder-grid-loading"></div>');
+                $content.html('<div class="thunder-grid-loading"><img src="' + $.thunder.settings.images.loadingGrid + '" /></div>');
                 $loading = $('.thunder-grid-loading', $content);
             }
 
@@ -351,18 +351,18 @@
         return this.each(function () {
             var $this = $(this);
 
-            $.extend(settings, {
-                iframe: ($this.data('iframe') != undefined ? $this.data('iframe') : settings.iframe),
-                iframeScroll: ($this.data('iframe-scroll') != undefined ? $this.data('iframe-scroll') : settings.iframeScroll),
-                url: ($this.is('a') ? $this.attr('href') : settings.url),
-                width: ($this.data('width') != undefined ? $this.data('width') : settings.width),
-                height: ($this.data('height') != undefined ? $this.data('height') : settings.height),
-                centerLoading: ($this.data('center-loading') != undefined ? $this.data('center-loading') : settings.centerLoading),
-                cssClass: ($this.data('css-class') != undefined ? $this.data('css-class') : settings.cssClass),
-                noCache: ($this.data('no-cache') != undefined ? $this.data('no-cache') : settings.noCache)
-            });
-
             $this.live('click', function (e) {
+                $.extend(settings, {
+                    iframe: ($this.data('iframe') != undefined ? $this.data('iframe') : settings.iframe),
+                    iframeScroll: ($this.data('iframe-scroll') != undefined ? $this.data('iframe-scroll') : settings.iframeScroll),
+                    url: ($this.is('a') ? $this.attr('href') : settings.url),
+                    width: ($this.data('width') != undefined ? $this.data('width') : settings.width),
+                    height: ($this.data('height') != undefined ? $this.data('height') : settings.height),
+                    centerLoading: ($this.data('center-loading') != undefined ? $this.data('center-loading') : settings.centerLoading),
+                    cssClass: ($this.data('css-class') != undefined ? $this.data('css-class') : settings.cssClass),
+                    noCache: ($this.data('no-cache') != undefined ? $this.data('no-cache') : settings.noCache)
+                });
+
                 $.modal(settings);
                 e.preventDefault();
             });
@@ -454,8 +454,6 @@
         var $modal = $('.thunder-modal', $('body'))
             .addClass(settings.cssClass);
 
-        window.modalInstance = $modal;
-
         $modal.dialog($.extend(settings, {
             autoOpen: true,
             modal: true,
@@ -478,8 +476,8 @@
                             'margin-top': '-' + ($(this).height() / 2) + 'px'
                         }).show();
                     });
-                }else {
-                    $loading.show();    
+                } else {
+                    $loading.show();
                 }
 
                 if (settings.iframe) {
@@ -507,10 +505,21 @@
 
                         $loading.remove();
 
-                        $('.thunder-modal-close', $($iframe.contents()[0])).live('click', function (e) {
+                        var $iframeContent = $($iframe.contents()[0]);
+
+                        $('.thunder-modal-close', $iframeContent).click(function (e) {
                             e.preventDefault();
-                            $.closeModal();
+                            $modal.dialog('close');
                         });
+
+                        if (settings.closeOnEscape == undefined || settings.closeOnEscape) {
+                            $iframeContent.on('keydown', function (evt) {
+                                if (evt.keyCode === $.ui.keyCode.ESCAPE) {
+                                    $modal.dialog('close');
+                                }
+                                evt.stopPropagation();
+                            });
+                        }
                     });
                 } else {
                     $modal.append('<div class="thunder-modal-message"></div>');
@@ -520,6 +529,10 @@
                         url: settings.url,
                         success: function (html) {
                             $modal.html(html);
+                            $('.thunder-modal-close', $modal).click(function (e) {
+                                e.preventDefault();
+                                $modal.dialog('close');
+                            });
                             settings.onOpen($modal);
                         }
                     });
@@ -531,12 +544,6 @@
                 $modal.dialog('destroy');
             }
         }));
-    };
-
-    $.closeModal = function () {
-        if (window.modalInstance) {
-            window.modalInstance.dialog('close');
-        }
     };
 
     $.fn.setOrders = function (orders) {
@@ -661,11 +668,6 @@
                     }
                 });
             }
-        });
-
-        $('.thunder-modal-close').live('click', function (e) {
-            e.preventDefault();
-            $.closeModal();
         });
     });
 
