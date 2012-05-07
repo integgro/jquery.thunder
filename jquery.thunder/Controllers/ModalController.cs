@@ -12,13 +12,11 @@ namespace Jquery.Thunder.Controllers
 
         public ActionResult Ajax()
         {
-            System.Threading.Thread.Sleep(2000);
             return View("_Ajax");
         }
 
         public ActionResult Iframe()
         {
-            System.Threading.Thread.Sleep(2000);
             return View("_Iframe");
         }
 
