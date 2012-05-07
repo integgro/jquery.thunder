@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.0.7',
+        version: '1.0.8',
         images: {
             loadingModal: '/content/jquery.thunder/images/loading_modal.gif',
             loadingGrid: '/content/jquery.thunder/images/loading_grid.gif',
@@ -476,11 +476,11 @@
                             'left': '50%',
                             'margin-left': '-' + ($(this).width() / 2) + 'px',
                             'margin-top': '-' + ($(this).height() / 2) + 'px'
-                        });
+                        }).show();
                     });
+                }else {
+                    $loading.show();    
                 }
-
-                $loading.show();
 
                 if (settings.iframe) {
                     var $iframe = $('<iframe frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>');
