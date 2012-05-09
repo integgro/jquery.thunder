@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.0.8',
+        version: '1.0.9',
         images: {
             loadingModal: '/content/jquery.thunder/images/loading_modal.gif',
             loadingGrid: '/content/jquery.thunder/images/loading_grid.gif',
@@ -467,14 +467,28 @@
                 $loading = $('.thunder-modal-loading', $modal);
 
                 if (settings.centerLoading) {
-                    $($('img', $loading)).load(function () {
+                    $('img', $loading).load(function () {
                         $loading.css({
                             'position': 'absolute',
                             'top': '50%',
-                            'left': '50%',
-                            'margin-left': '-' + ($(this).width() / 2) + 'px',
-                            'margin-top': '-' + ($(this).height() / 2) + 'px'
-                        }).show();
+                            'left': '50%'
+                        });
+
+                        if ($.browser.msie) {
+                            var img = this;
+                            $loading.show();
+                            window.setTimeout(function () {
+                                $loading.css({
+                                    'margin-left': '-' + (img.width / 2) + 'px',
+                                    'margin-top': '-' + (img.height / 2) + 'px'
+                                });
+                            }, 10);
+                        } else {
+                            $loading.css({
+                                'margin-left': '-' + (this.width / 2) + 'px',
+                                'margin-top': '-' + (this.height / 2) + 'px'
+                            }).show();
+                        }
                     });
                 } else {
                     $loading.show();
