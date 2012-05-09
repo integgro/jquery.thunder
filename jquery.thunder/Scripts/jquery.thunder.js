@@ -164,9 +164,9 @@
 
         $form.live('submit', function () {
             $message.hide();
-            
+
             settings.onBeforeSubmit();
-            
+
             $.ajax({
                 statusCode: statusCode($message, { focus: true }),
                 url: $form.attr('action'),
@@ -210,11 +210,11 @@
                         } else {
                             if ($(r).is('.message')) {
                                 $message.html(r);
-                                if(settings.focus) {
+                                if (settings.focus) {
                                     $targetScroll.animate({ scrollTop: $message.offset().top - 20 }, 'slow', function () {
                                         $message.slideDown();
-                                    });                                    
-                                }else {
+                                    });
+                                } else {
                                     $message.slideDown();
                                 }
                             } else {
@@ -507,7 +507,7 @@
                 }
 
                 if (settings.iframe) {
-                    var $iframe = $('<iframe frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>');
+                    var $iframe = $('<iframe frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>').hide();
 
                     if (settings.noCache) {
                         if (settings.url.lastIndexOf('?') != -1) {
@@ -546,6 +546,8 @@
                                 evt.stopPropagation();
                             });
                         }
+
+                        $iframe.show();
                     });
                 } else {
                     $modal.append('<div class="thunder-modal-message"></div>');

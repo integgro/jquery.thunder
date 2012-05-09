@@ -507,7 +507,7 @@
                 }
 
                 if (settings.iframe) {
-                    var $iframe = $('<iframe frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>');
+                    var $iframe = $('<iframe frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>').hide();
 
                     if (settings.noCache) {
                         if (settings.url.lastIndexOf('?') != -1) {
@@ -546,6 +546,8 @@
                                 evt.stopPropagation();
                             });
                         }
+
+                        $iframe.show();
                     });
                 } else {
                     $modal.append('<div class="thunder-modal-message"></div>');
