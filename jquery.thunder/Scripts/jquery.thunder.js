@@ -161,7 +161,7 @@
             $message.hide();
 
             $.ajax({
-                statusCode: statusCode($message),
+                statusCode: statusCode($message, {focus: true}),
                 url: $form.attr('action'),
                 type: $form.attr('method'),
                 headers: { 'Thunder-Ajax': true },
@@ -178,26 +178,25 @@
                     settings.onComplete();
                 },
                 success: function (r) {
-                    window.setTimeout(function () {
-                        if (typeof (r) == 'object') {
+                    window.setTimeout(function() {
+                        if (typeof(r) == 'object') {
                             if (r.Status) {
                                 if (r.Status == 200) {
                                     settings.onSuccess($form, r);
-                                }
-                                else {
+                                } else {
                                     if (r.Messages) {
                                         if (r.Status == 202) {
-                                            $message.message('error', r.Messages);
+                                            $message.message('error', r.Messages, { focus: true });
                                         } else if (r.Status == 203) {
-                                            $message.message('information', r.Messages);
+                                            $message.message('information', r.Messages, { focus: true });
                                         } else if (r.Status == 204) {
-                                            $message.message('attention', r.Messages);
+                                            $message.message('attention', r.Messages, { focus: true });
                                         }
-                                        $.each(r.Messages, function () {
+                                        $.each(r.Messages, function() {
                                             $('input[name="' + this.Field + '"],select[name="' + this.Field + '"],textarea[name="' + this.Field + '"]').addClass(settings.cssFieldError);
                                         });
                                     } else {
-                                        $message.message('error', 'Message no exist in request result.');
+                                        $message.message('error', 'Message no exist in request result.', { focus: true });
                                     }
                                 }
                             }

@@ -2,11 +2,11 @@
     Ajax em formulários</h2>
 <script type="text/javascript">
     $(function () {
-//        $('#form-json').ajaxForm({
-//            onSuccess: function (form) {
-//                form.data('message').message('success', 'Registro salvo com sucesso!');
-//            }
-//        });
+        $('#form-json').ajaxForm({
+            onSuccess: function (form) {
+                form.data('message').message('success', 'Registro salvo com sucesso!');
+            }
+        });
 
         $('#form-html').ajaxForm({
             onSuccess: function (form) {
@@ -16,24 +16,27 @@
 
     });
 
-    function teste (form, r) {
+    function teste(form, r) {
         alert(r);
     };
 
 
 </script>
-<h3>
-    Exemplo 1 - Retornando json</h3>
-<form id="form-json" data-ajax="true" data-ajax-success="teste" method="POST" action="@Url.Content("~/form/json")">
-<p>
-    <label>
-        Nome</label>
-    <input name="name" type="text" />
-</p>
-<p>
-    <input type="submit" value="Enviar" />
-</p>
-</form>
+<div style="overflow: auto; height: 200px;">
+    <h3>
+        Exemplo 1 - Retornando json</h3>
+    <form id="form-json" data-ajax="true" data-ajax-success="teste" method="POST" action="@Url.Content("~/form/json")">
+        <p>
+            <label>
+                Nome</label>
+            <input name="name" type="text" />
+        </p>
+        <br/><br/><br/><br/><br/><br/><br/><br/>
+    <p>
+        <input type="submit" value="Enviar" />
+    </p>
+    </form>
+</div>
 <h3>
     Exemplo 2 - Retornando html</h3>
 <form id="form-html" method="POST" action="@Url.Content("~/form/html")">
