@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.0.9',
+        version: '1.1.0',
         images: {
             loadingModal: '/content/jquery.thunder/images/loading_modal.gif',
             loadingGrid: '/content/jquery.thunder/images/loading_grid.gif',
@@ -121,6 +121,7 @@
         var settings = $.extend({
             message: null,
             loading: null,
+            focus: true,
             disableElements: 'input,select,textarea,button',
             cssFieldError: 'thunder-form-field-error',
             onSuccess: function () {
@@ -136,6 +137,7 @@
         var $message = $(settings.message);
         var $loading = $(settings.loading);
         var $button = $form.find('input[type="submit"]');
+        var $targetScroll = ($form.parent().css('overflow') == 'visible' ? $('html:not(:animated),body:not(:animated)') : $form.parent());
 
         if ($message.size() == 0) {
             $form.before('<div class="thunder-form-message"></div>');
@@ -208,7 +210,13 @@
                         } else {
                             if ($(r).is('.message')) {
                                 $message.html(r);
-                                $message.show();
+                                if (settings.focus) {
+                                    $targetScroll.animate({ scrollTop: $message.offset().top - 20 }, 'slow', function () {
+                                        $message.slideDown();
+                                    });
+                                } else {
+                                    $message.slideDown();
+                                }
                             } else {
                                 settings.onSuccess($form, r);
                             }
