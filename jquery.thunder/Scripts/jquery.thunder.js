@@ -128,6 +128,9 @@
             onBefore: function () {
             },
             onComplete: function () {
+            },
+            onBeforeSubmit: function () {
+
             }
         }, options);
         var $message = $(settings.message);
@@ -159,9 +162,11 @@
 
         $form.live('submit', function () {
             $message.hide();
-
+            
+            settings.onBeforeSubmit();
+            
             $.ajax({
-                statusCode: statusCode($message, {focus: true}),
+                statusCode: statusCode($message, { focus: true }),
                 url: $form.attr('action'),
                 type: $form.attr('method'),
                 headers: { 'Thunder-Ajax': true },
@@ -178,8 +183,8 @@
                     settings.onComplete();
                 },
                 success: function (r) {
-                    window.setTimeout(function() {
-                        if (typeof(r) == 'object') {
+                    window.setTimeout(function () {
+                        if (typeof (r) == 'object') {
                             if (r.Status) {
                                 if (r.Status == 200) {
                                     settings.onSuccess($form, r);
@@ -192,7 +197,7 @@
                                         } else if (r.Status == 204) {
                                             $message.message('attention', r.Messages, { focus: true });
                                         }
-                                        $.each(r.Messages, function() {
+                                        $.each(r.Messages, function () {
                                             $('input[name="' + this.Field + '"],select[name="' + this.Field + '"],textarea[name="' + this.Field + '"]').addClass(settings.cssFieldError);
                                         });
                                     } else {
