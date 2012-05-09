@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.0.8',
+        version: '1.0.9',
         images: {
             loadingModal: '/content/jquery.thunder/images/loading_modal.gif',
             loadingGrid: '/content/jquery.thunder/images/loading_grid.gif',
@@ -128,6 +128,9 @@
             onBefore: function () {
             },
             onComplete: function () {
+            },
+            onBeforeSubmit: function () {
+
             }
         }, options);
         var $message = $(settings.message);
@@ -160,8 +163,10 @@
         $form.live('submit', function () {
             $message.hide();
 
+            settings.onBeforeSubmit();
+
             $.ajax({
-                statusCode: statusCode($message),
+                statusCode: statusCode($message, { focus: true }),
                 url: $form.attr('action'),
                 type: $form.attr('method'),
                 headers: { 'Thunder-Ajax': true },
@@ -183,21 +188,20 @@
                             if (r.Status) {
                                 if (r.Status == 200) {
                                     settings.onSuccess($form, r);
-                                }
-                                else {
+                                } else {
                                     if (r.Messages) {
                                         if (r.Status == 202) {
-                                            $message.message('error', r.Messages);
+                                            $message.message('error', r.Messages, { focus: true });
                                         } else if (r.Status == 203) {
-                                            $message.message('information', r.Messages);
+                                            $message.message('information', r.Messages, { focus: true });
                                         } else if (r.Status == 204) {
-                                            $message.message('attention', r.Messages);
+                                            $message.message('attention', r.Messages, { focus: true });
                                         }
                                         $.each(r.Messages, function () {
                                             $('input[name="' + this.Field + '"],select[name="' + this.Field + '"],textarea[name="' + this.Field + '"]').addClass(settings.cssFieldError);
                                         });
                                     } else {
-                                        $message.message('error', 'Message no exist in request result.');
+                                        $message.message('error', 'Message no exist in request result.', { focus: true });
                                     }
                                 }
                             }
@@ -467,14 +471,28 @@
                 $loading = $('.thunder-modal-loading', $modal);
 
                 if (settings.centerLoading) {
-                    $($('img', $loading)).load(function () {
+                    $('img', $loading).load(function () {
                         $loading.css({
                             'position': 'absolute',
                             'top': '50%',
-                            'left': '50%',
-                            'margin-left': '-' + ($(this).width() / 2) + 'px',
-                            'margin-top': '-' + ($(this).height() / 2) + 'px'
-                        }).show();
+                            'left': '50%'
+                        });
+
+                        if ($.browser.msie) {
+                            var img = this;
+                            $loading.show();
+                            window.setTimeout(function () {
+                                $loading.css({
+                                    'margin-left': '-' + (img.width / 2) + 'px',
+                                    'margin-top': '-' + (img.height / 2) + 'px'
+                                });
+                            }, 10);
+                        } else {
+                            $loading.css({
+                                'margin-left': '-' + (this.width / 2) + 'px',
+                                'margin-top': '-' + (this.height / 2) + 'px'
+                            }).show();
+                        }
                     });
                 } else {
                     $loading.show();
