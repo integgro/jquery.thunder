@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.1.0',
+        version: '1.1.1',
         images: {
             loadingModal: '/content/jquery.thunder/images/loading_modal.gif',
             loadingGrid: '/content/jquery.thunder/images/loading_grid.gif',
@@ -16,14 +16,20 @@
     var methods = {
         message: {
             create: function ($this, cssClass, message, options) {
-                var settings = $.extend({
+                var settings = {
                     animate: true,
                     focus: false,
                     close: {
                         show: true,
                         title: 'Close this notification'
+                    },
+                    autoClose: {
+                        enable: false,
+                        delay: 5000
                     }
-                }, options);
+                };
+
+                $.extend(settings, options);
 
                 $this.addClass('thunder-notification');
                 $this.hide();
@@ -81,6 +87,12 @@
                         }
                         e.preventDefault();
                     });
+
+                    if (settings.autoClose.enable) {
+                        window.setTimeout(function () {
+                            $close.trigger('click');
+                        }, settings.autoClose.delay == undefined ? 5000 : settings.autoClose.delay);
+                    }
                 }
             },
             success: function (message, options) {
