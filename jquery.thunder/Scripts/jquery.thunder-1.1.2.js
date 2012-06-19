@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.1.1',
+        version: '1.1.2',
         images: {
             loadingModal: '/content/jquery.thunder/images/loading_modal.gif',
             loadingGrid: '/content/jquery.thunder/images/loading_grid.gif',
@@ -10,6 +10,9 @@
         },
         confirm: {
             label: { yes: 'Yes', no: 'No' }
+        },
+        alert: {
+            label: { ok: 'OK' }
         }
     };
 
@@ -60,6 +63,8 @@
                     }
                 }
 
+                $this.css('opacity', '1');
+
                 if (settings.animate) {
                     if (settings.focus) {
                         $targetScroll.animate({ scrollTop: $focus.offset().top - 20 }, 'slow', function () {
@@ -90,7 +95,9 @@
 
                     if (settings.autoClose.enable) {
                         window.setTimeout(function () {
-                            $close.trigger('click');
+                            if ($this.css('display') != 'none') {
+                                $close.trigger('click');
+                            }
                         }, settings.autoClose.delay == undefined ? 5000 : settings.autoClose.delay);
                     }
                 }
@@ -151,7 +158,7 @@
         var $button = $form.find('input[type="submit"]');
         var $targetScroll = ($form.parent().css('overflow') == 'visible' ? $('html:not(:animated),body:not(:animated)') : $form.parent());
 
-        if ($message.size() == 0) {
+        if ($message.size() == 0 && $form.prev('.thunder-form-message').size() == 0) {
             $form.before('<div class="thunder-form-message"></div>');
             $message = $form.prev('.thunder-form-message');
         }
@@ -263,7 +270,7 @@
 
         $grid.html($content);
 
-        if ($message.size() == 0) {
+        if ($message.size() == 0 && $grid.prev('.thunder-grid-message').size() == 0) {
             $grid.before('<div class="thunder-grid-message"></div>');
             $message = $grid.prev('.thunder-grid-message');
         }
@@ -393,63 +400,6 @@
         });
     };
 
-    $.confirm = function (message, options) {
-        var settings = $.extend($.thunder.settings.confirm, {
-            width: 480,
-            height: 'auto',
-            cssClass: '',
-            onYes: function () {
-            },
-            onNo: function () {
-            }
-        }, options);
-
-        if ($('body')['dialog'] == undefined) {
-            $.error('This project not implement jquery.ui.');
-            return;
-        }
-
-        if ($('.thunder-confirm').size() == 0) {
-            $('body').prepend('<div class="thunder-confirm"></div>');
-        }
-
-        var $yes = $('<a href="#" class="thunder-confirm-yes"></a>').html(settings.label.yes);
-        var $no = $('<a href="#" class="thunder-confirm-no"></a>').html(settings.label.no);
-        var $message = $('<div class="thunder-confirm-message"></div>').html(message);
-        var $action = $('<div class="thunder-confirm-action"></div>').append($yes).append($no);
-        var $confirm = $('.thunder-confirm', $('body'))
-            .addClass(settings.cssClass)
-            .append($message)
-            .append($action);
-
-        $yes.click(function (e) {
-            settings.onYes();
-            $confirm.dialog('close');
-            e.preventDefault();
-        });
-
-        $no.click(function (e) {
-            settings.onNo();
-            $confirm.dialog('close');
-            e.preventDefault();
-        });
-
-        $confirm.dialog({
-            autoOpen: true,
-            modal: true,
-            resizable: false,
-            closeOnEscape: false,
-            draggable: false,
-            width: settings.width,
-            height: settings.height,
-            open: function () { $('.ui-dialog-titlebar ').remove(); },
-            close: function () {
-                $confirm.remove();
-                $confirm.dialog('destroy');
-            }
-        });
-    };
-
     $.modal = function (options) {
         var settings = $.extend({
             iframe: false,
@@ -539,19 +489,18 @@
 
                     $iframe.attr('src', settings.url);
                     $iframe.load(function () {
-                        settings.onOpen($($iframe.contents()[0]));
-
+                        $iframe.show();
                         $loading.remove();
 
-                        var $iframeContent = $($iframe.contents()[0]);
+                        var $close = $iframe.contents().find('.thunder-modal-close');
 
-                        $('.thunder-modal-close', $iframeContent).click(function (e) {
+                        $close.click(function (e) {
                             e.preventDefault();
                             $modal.dialog('close');
                         });
 
                         if (settings.closeOnEscape == undefined || settings.closeOnEscape) {
-                            $iframeContent.on('keydown', function (evt) {
+                            $iframe.contents().on('keydown', function (evt) {
                                 if (evt.keyCode === $.ui.keyCode.ESCAPE) {
                                     $modal.dialog('close');
                                 }
@@ -559,7 +508,7 @@
                             });
                         }
 
-                        $iframe.show();
+                        settings.onOpen($iframe.contents());
                     });
                 } else {
                     $modal.append('<div class="thunder-modal-message"></div>');
@@ -584,6 +533,117 @@
                 $modal.dialog('destroy');
             }
         }));
+    };
+
+    $.closeModal = function () {
+        if ($('.thunder-modal').size() > 0) {
+            $('.thunder-modal').dialog('close');
+        }
+    };
+
+    $.confirm = function (message, options) {
+        var settings = $.extend($.thunder.settings.confirm, {
+            width: 480,
+            height: 'auto',
+            cssClass: '',
+            onYes: function () {
+            },
+            onNo: function () {
+            }
+        }, options);
+
+        if ($('body')['dialog'] == undefined) {
+            $.error('This project not implement jquery.ui.');
+            return;
+        }
+
+        if ($('.thunder-confirm').size() == 0) {
+            $('body').prepend('<div class="thunder-confirm"></div>');
+        }
+
+        var $yes = $('<a href="#" class="thunder-confirm-yes"></a>').html(settings.label.yes);
+        var $no = $('<a href="#" class="thunder-confirm-no"></a>').html(settings.label.no);
+        var $message = $('<div class="thunder-confirm-message"></div>').html(message);
+        var $action = $('<div class="thunder-confirm-action"></div>').append($yes).append($no);
+        var $confirm = $('.thunder-confirm', $('body'))
+            .addClass(settings.cssClass)
+            .append($message)
+            .append($action);
+
+        $yes.click(function (e) {
+            settings.onYes();
+            $confirm.dialog('close');
+            e.preventDefault();
+        });
+
+        $no.click(function (e) {
+            settings.onNo();
+            $confirm.dialog('close');
+            e.preventDefault();
+        });
+
+        $confirm.dialog({
+            autoOpen: true,
+            modal: true,
+            resizable: false,
+            closeOnEscape: false,
+            draggable: false,
+            width: settings.width,
+            height: settings.height,
+            open: function () { $('.ui-dialog-titlebar ').remove(); },
+            close: function () {
+                $confirm.remove();
+                $confirm.dialog('destroy');
+            }
+        });
+    };
+
+    $.alert = function (message, options) {
+        var settings = $.extend($.thunder.settings.alert, {
+            width: 480,
+            height: 'auto',
+            cssClass: '',
+            onOk: function () {
+            }
+        }, options);
+
+        if ($('body')['dialog'] == undefined) {
+            $.error('This project not implement jquery.ui.');
+            return;
+        }
+
+        if ($('.thunder-alert').size() == 0) {
+            $('body').prepend('<div class="thunder-alert"></div>');
+        }
+
+        var $ok = $('<a href="#" class="thunder-alert-ok"></a>').html(settings.label.ok);
+        var $message = $('<div class="thunder-alert-message"></div>').html(message);
+        var $action = $('<div class="thunder-alert-action"></div>').append($ok);
+        var $alert = $('.thunder-alert', $('body'))
+            .addClass(settings.cssClass)
+            .append($message)
+            .append($action);
+
+        $ok.click(function (e) {
+            settings.onOk();
+            $alert.dialog('close');
+            e.preventDefault();
+        });
+
+        $alert.dialog({
+            autoOpen: true,
+            modal: true,
+            resizable: false,
+            closeOnEscape: false,
+            draggable: false,
+            width: settings.width,
+            height: settings.height,
+            open: function () { $('.ui-dialog-titlebar ').remove(); },
+            close: function () {
+                $alert.remove();
+                $alert.dialog('destroy');
+            }
+        });
     };
 
     $.fn.setOrders = function (orders) {
