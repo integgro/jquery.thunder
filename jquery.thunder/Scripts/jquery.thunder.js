@@ -454,6 +454,12 @@
         });
     };
 
+    $.closeModal = function () {
+        if ($('.thunder-modal').size() > 0) {
+            $('.thunder-modal').dialog('close');
+        }
+    };
+
     $.modal = function (options) {
         var settings = $.extend({
             iframe: false,
@@ -543,19 +549,18 @@
 
                     $iframe.attr('src', settings.url);
                     $iframe.load(function () {
-                        settings.onOpen($($iframe.contents()[0]));
-
+                        $iframe.show();
                         $loading.remove();
 
-                        var $iframeContent = $($iframe.contents()[0]);
+                        var $close = $iframe.contents().find('.thunder-modal-close');
 
-                        $('.thunder-modal-close', $iframeContent).click(function (e) {
+                        $close.click(function (e) {
                             e.preventDefault();
                             $modal.dialog('close');
                         });
 
                         if (settings.closeOnEscape == undefined || settings.closeOnEscape) {
-                            $iframeContent.on('keydown', function (evt) {
+                            $iframe.contents().on('keydown', function (evt) {
                                 if (evt.keyCode === $.ui.keyCode.ESCAPE) {
                                     $modal.dialog('close');
                                 }
@@ -563,7 +568,7 @@
                             });
                         }
 
-                        $iframe.show();
+                        settings.onOpen($iframe.contents());
                     });
                 } else {
                     $modal.append('<div class="thunder-modal-message"></div>');

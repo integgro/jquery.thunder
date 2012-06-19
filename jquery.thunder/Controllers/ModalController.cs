@@ -17,7 +17,7 @@ namespace Jquery.Thunder.Controllers
 
         public ActionResult Iframe()
         {
-            System.Threading.Thread.Sleep(10000);
+            //System.Threading.Thread.Sleep(10000);
             return View("_Iframe");
         }
 

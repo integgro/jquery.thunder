@@ -10,6 +10,11 @@
 <script type="text/javascript">
     $(function () {
         $('#modal').modal({ width: 400 });
+
+        $('#fechar').click(function () {
+            window.parent.$.closeModal();
+        });
+
     });
 </script>
 </head>
@@ -22,6 +27,7 @@
 <p>nonononononononononononon nono nono nonono non ononononononono</p>
 <p>nonononononononononononon nono nono nonono non ononononononono</p>
 <a href="#" class="thunder-modal-close">Fechar</a>
-<a href="@Url.Content("~/modal/ajax")" id="modal">Abrir</a>
+    <a href="@Url.Content("~/modal/ajax")" id="modal">Abrir</a>
+    <a id="fechar" href="#">Teste</a>
 </body>
 </html>
