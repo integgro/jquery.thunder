@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.1.1',
+        version: '1.1.2',
         images: {
             loadingModal: '/content/jquery.thunder/images/loading_modal.gif',
             loadingGrid: '/content/jquery.thunder/images/loading_grid.gif',
@@ -60,6 +60,8 @@
                     }
                 }
 
+                $this.css('opacity', '1');
+
                 if (settings.animate) {
                     if (settings.focus) {
                         $targetScroll.animate({ scrollTop: $focus.offset().top - 20 }, 'slow', function () {
@@ -90,7 +92,9 @@
 
                     if (settings.autoClose.enable) {
                         window.setTimeout(function () {
-                            $close.trigger('click');
+                            if ($this.css('display') != 'none') {
+                                $close.trigger('click');
+                            }
                         }, settings.autoClose.delay == undefined ? 5000 : settings.autoClose.delay);
                     }
                 }
