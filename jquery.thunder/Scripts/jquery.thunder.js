@@ -158,7 +158,7 @@
         var $button = $form.find('input[type="submit"]');
         var $targetScroll = ($form.parent().css('overflow') == 'visible' ? $('html:not(:animated),body:not(:animated)') : $form.parent());
 
-        if ($message.size() == 0) {
+        if ($message.size() == 0 && $form.prev('.thunder-form-message').size() == 0) {
             $form.before('<div class="thunder-form-message"></div>');
             $message = $form.prev('.thunder-form-message');
         }
@@ -270,7 +270,7 @@
 
         $grid.html($content);
 
-        if ($message.size() == 0) {
+        if ($message.size() == 0 && $grid.prev('.thunder-grid-message').size() == 0) {
             $grid.before('<div class="thunder-grid-message"></div>');
             $message = $grid.prev('.thunder-grid-message');
         }
