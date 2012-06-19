@@ -1,0 +1,13 @@
+﻿<h2>Alerta</h2>
+<script type="text/javascript">
+    $(function () {
+        $.thunder.settings.alert.label.ok = 'OK';
+
+        $('a').click(function (e) {
+            $.alert('Mensagem de alerta.');
+            e.preventDefault();
+        });
+
+    });
+</script>
+<a href="#">Alerta</a>

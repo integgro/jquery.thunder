@@ -10,6 +10,9 @@
         },
         confirm: {
             label: { yes: 'Yes', no: 'No' }
+        },
+        alert: {
+            label: { ok: 'OK' }
         }
     };
 
@@ -397,69 +400,6 @@
         });
     };
 
-    $.confirm = function (message, options) {
-        var settings = $.extend($.thunder.settings.confirm, {
-            width: 480,
-            height: 'auto',
-            cssClass: '',
-            onYes: function () {
-            },
-            onNo: function () {
-            }
-        }, options);
-
-        if ($('body')['dialog'] == undefined) {
-            $.error('This project not implement jquery.ui.');
-            return;
-        }
-
-        if ($('.thunder-confirm').size() == 0) {
-            $('body').prepend('<div class="thunder-confirm"></div>');
-        }
-
-        var $yes = $('<a href="#" class="thunder-confirm-yes"></a>').html(settings.label.yes);
-        var $no = $('<a href="#" class="thunder-confirm-no"></a>').html(settings.label.no);
-        var $message = $('<div class="thunder-confirm-message"></div>').html(message);
-        var $action = $('<div class="thunder-confirm-action"></div>').append($yes).append($no);
-        var $confirm = $('.thunder-confirm', $('body'))
-            .addClass(settings.cssClass)
-            .append($message)
-            .append($action);
-
-        $yes.click(function (e) {
-            settings.onYes();
-            $confirm.dialog('close');
-            e.preventDefault();
-        });
-
-        $no.click(function (e) {
-            settings.onNo();
-            $confirm.dialog('close');
-            e.preventDefault();
-        });
-
-        $confirm.dialog({
-            autoOpen: true,
-            modal: true,
-            resizable: false,
-            closeOnEscape: false,
-            draggable: false,
-            width: settings.width,
-            height: settings.height,
-            open: function () { $('.ui-dialog-titlebar ').remove(); },
-            close: function () {
-                $confirm.remove();
-                $confirm.dialog('destroy');
-            }
-        });
-    };
-
-    $.closeModal = function () {
-        if ($('.thunder-modal').size() > 0) {
-            $('.thunder-modal').dialog('close');
-        }
-    };
-
     $.modal = function (options) {
         var settings = $.extend({
             iframe: false,
@@ -593,6 +533,117 @@
                 $modal.dialog('destroy');
             }
         }));
+    };
+
+    $.closeModal = function () {
+        if ($('.thunder-modal').size() > 0) {
+            $('.thunder-modal').dialog('close');
+        }
+    };
+
+    $.confirm = function (message, options) {
+        var settings = $.extend($.thunder.settings.confirm, {
+            width: 480,
+            height: 'auto',
+            cssClass: '',
+            onYes: function () {
+            },
+            onNo: function () {
+            }
+        }, options);
+
+        if ($('body')['dialog'] == undefined) {
+            $.error('This project not implement jquery.ui.');
+            return;
+        }
+
+        if ($('.thunder-confirm').size() == 0) {
+            $('body').prepend('<div class="thunder-confirm"></div>');
+        }
+
+        var $yes = $('<a href="#" class="thunder-confirm-yes"></a>').html(settings.label.yes);
+        var $no = $('<a href="#" class="thunder-confirm-no"></a>').html(settings.label.no);
+        var $message = $('<div class="thunder-confirm-message"></div>').html(message);
+        var $action = $('<div class="thunder-confirm-action"></div>').append($yes).append($no);
+        var $confirm = $('.thunder-confirm', $('body'))
+            .addClass(settings.cssClass)
+            .append($message)
+            .append($action);
+
+        $yes.click(function (e) {
+            settings.onYes();
+            $confirm.dialog('close');
+            e.preventDefault();
+        });
+
+        $no.click(function (e) {
+            settings.onNo();
+            $confirm.dialog('close');
+            e.preventDefault();
+        });
+
+        $confirm.dialog({
+            autoOpen: true,
+            modal: true,
+            resizable: false,
+            closeOnEscape: false,
+            draggable: false,
+            width: settings.width,
+            height: settings.height,
+            open: function () { $('.ui-dialog-titlebar ').remove(); },
+            close: function () {
+                $confirm.remove();
+                $confirm.dialog('destroy');
+            }
+        });
+    };
+
+    $.alert = function (message, options) {
+        var settings = $.extend($.thunder.settings.alert, {
+            width: 480,
+            height: 'auto',
+            cssClass: '',
+            onOk: function () {
+            }
+        }, options);
+
+        if ($('body')['dialog'] == undefined) {
+            $.error('This project not implement jquery.ui.');
+            return;
+        }
+
+        if ($('.thunder-alert').size() == 0) {
+            $('body').prepend('<div class="thunder-alert"></div>');
+        }
+
+        var $ok = $('<a href="#" class="thunder-alert-ok"></a>').html(settings.label.ok);
+        var $message = $('<div class="thunder-alert-message"></div>').html(message);
+        var $action = $('<div class="thunder-alert-action"></div>').append($ok);
+        var $alert = $('.thunder-alert', $('body'))
+            .addClass(settings.cssClass)
+            .append($message)
+            .append($action);
+
+        $ok.click(function (e) {
+            settings.onOk();
+            $alert.dialog('close');
+            e.preventDefault();
+        });
+
+        $alert.dialog({
+            autoOpen: true,
+            modal: true,
+            resizable: false,
+            closeOnEscape: false,
+            draggable: false,
+            width: settings.width,
+            height: settings.height,
+            open: function () { $('.ui-dialog-titlebar ').remove(); },
+            close: function () {
+                $alert.remove();
+                $alert.dialog('destroy');
+            }
+        });
     };
 
     $.fn.setOrders = function (orders) {
