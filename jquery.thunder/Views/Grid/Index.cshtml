@@ -3,10 +3,16 @@
 <script type="text/javascript">
     $(function () {
         $('#grid1').grid({
-            form: $('form')
+            form: $('form'),
+            load: false
         });
     });
 </script>
-<div id="grid1" data-url="@Url.Content("~/grid/data")"></div>
+<form>
+    <input type="submit" value="Teste"/>
+</form>
+<div id="grid1" data-url="@Url.Content("~/grid/data")">
+    teste 123
+</div>
 
 

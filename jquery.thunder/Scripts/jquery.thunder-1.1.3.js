@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.1.2',
+        version: '1.1.3',
         images: {
             loadingModal: '/content/jquery.thunder/images/loading_modal.gif',
             loadingGrid: '/content/jquery.thunder/images/loading_grid.gif',
@@ -267,6 +267,10 @@
         var $loading = $(settings.loading);
         var $form = $(settings.form);
         var $content = $('<div class="thunder-grid-content"></div>');
+
+        if (!settings.load) {
+            $content.html($grid.html());
+        }
 
         $grid.html($content);
 
