@@ -2,11 +2,11 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.1.4',
+        version: '1.1.5',
         images: {
-            loadingModal: '/content/jquery.thunder/images/loading_modal.gif',
-            loadingGrid: '/content/jquery.thunder/images/loading_grid.gif',
-            loadingForm: '/content/jquery.thunder/images/loading_form.gif'
+            loadingModal: '/content/jquerythunder/images/loading_modal.gif',
+            loadingGrid: '/content/jquerythunder/images/loading_grid.gif',
+            loadingForm: '/content/jquerythunder/images/loading_form.gif'
         },
         confirm: {
             label: { yes: 'Yes', no: 'No' }

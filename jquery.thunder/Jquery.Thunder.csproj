@@ -94,18 +94,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\jquery.thunder\images\loading_form.gif" />
-    <Content Include="Content\jquery.thunder\images\loading_modal.gif" />
-    <Content Include="Content\jquery.thunder\images\loading_grid.gif" />
-    <Content Include="Content\jquery.thunder\jquery.thunder-1.1.4.css" />
-    <Content Include="Content\jquery.thunder\jquery.thunder-1.1.4.min.css" />
-    <Content Include="Content\jquery.thunder\jquery.thunder.css" />
-    <Content Include="Content\jquery.thunder\images\attention.png" />
-    <Content Include="Content\jquery.thunder\images\close.png" />
-    <Content Include="Content\jquery.thunder\images\error.png" />
-    <Content Include="Content\jquery.thunder\images\information.png" />
-    <Content Include="Content\jquery.thunder\images\loading.gif" />
-    <Content Include="Content\jquery.thunder\images\success.png" />
+    <Content Include="Content\jquerythunder\images\loading_form.gif" />
+    <Content Include="Content\jquerythunder\images\loading_modal.gif" />
+    <Content Include="Content\jquerythunder\images\loading_grid.gif" />
+    <Content Include="Content\jquerythunder\jquery.thunder-1.1.5.css" />
+    <Content Include="Content\jquerythunder\jquery.thunder-1.1.5.min.css" />
+    <Content Include="Content\jquerythunder\jquery.thunder.css" />
+    <Content Include="Content\jquerythunder\images\attention.png" />
+    <Content Include="Content\jquerythunder\images\close.png" />
+    <Content Include="Content\jquerythunder\images\error.png" />
+    <Content Include="Content\jquerythunder\images\information.png" />
+    <Content Include="Content\jquerythunder\images\loading.gif" />
+    <Content Include="Content\jquerythunder\images\success.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -135,8 +135,8 @@
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\jquery.thunder-1.1.4.min.js" />
-    <Content Include="Scripts\jquery.thunder-1.1.4.js" />
+    <Content Include="Scripts\jquery.thunder-1.1.5.min.js" />
+    <Content Include="Scripts\jquery.thunder-1.1.5.js" />
     <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.18.min.js" />
