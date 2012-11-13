@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.1.5',
+        version: '1.1.6',
         images: {
             loadingModal: '/content/jquerythunder/images/loading_modal.gif',
             loadingGrid: '/content/jquerythunder/images/loading_grid.gif',
@@ -177,7 +177,7 @@
         $message.hide();
         $loading.hide();
 
-        if (!$form.attr('action') || $form.attr('action').trim() == '') {
+        if (!$form.attr('action') || $.trim($form.attr('action')) == '') {
             $message.message('error', 'Form action no exist.');
         }
 
