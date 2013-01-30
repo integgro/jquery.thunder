@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.1.6',
+        version: '1.1.7',
         images: {
             loadingModal: '/content/jquerythunder/images/loading_modal.gif',
             loadingGrid: '/content/jquerythunder/images/loading_grid.gif',
@@ -596,8 +596,8 @@
             height: settings.height,
             open: function () { $('.ui-dialog-titlebar ').remove(); },
             close: function () {
-                $confirm.remove();
                 $confirm.dialog('destroy');
+                $confirm.remove();
             }
         });
     };
@@ -644,8 +644,8 @@
             height: settings.height,
             open: function () { $('.ui-dialog-titlebar ').remove(); },
             close: function () {
-                $alert.remove();
                 $alert.dialog('destroy');
+                $alert.remove();
             }
         });
     };
