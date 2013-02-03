@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.1.7',
+        version: '1.1.8',
         images: {
             loadingModal: '/content/jquerythunder/images/loading_modal.gif',
             loadingGrid: '/content/jquerythunder/images/loading_grid.gif',
@@ -181,7 +181,7 @@
             $message.message('error', 'Form action no exist.');
         }
 
-        $form.live('submit', function () {
+        $form.on('submit', function () {
             $message.hide();
 
             settings.onBeforeSubmit();
@@ -209,6 +209,16 @@
                             if (r.Status) {
                                 if (r.Status == 200) {
                                     settings.onSuccess($form, r);
+                                } else if (r.Status == 205) {
+                                    if (r.Data.Url == 'undefined') {
+                                        $message.message('error', 'Url for authenticate not exist.', { focus: true });
+                                    } else {
+                                        if (window.parent) {
+                                            window.parent.top.location.href = r.Data.Url;
+                                        } else {
+                                            window.top.location.href = r.Data.Url;
+                                        }
+                                    }
                                 } else {
                                     if (r.Messages) {
                                         if (r.Status == 202) {
@@ -230,7 +240,7 @@
                             if ($(r).is('.thunder-notification')) {
                                 $message.html(r);
                                 if (settings.focus) {
-                                    $targetScroll.animate({ scrollTop: $message.offset().top - 20 }, 'slow', function () {
+                                    $targetScroll.animate({ scrollTop: 0 }, 'slow', function () {
                                         $message.slideDown();
                                     });
                                 } else {
@@ -322,6 +332,18 @@
                         $content.html(r);
                         $('tbody tr:even', $grid).addClass('even');
                         settings.onComplete($grid);
+                    } else if (typeof (r) == 'object') {
+                        if (r.Status == 205) {
+                            if (r.Data.Url == 'undefined') {
+                                $message.message('error', 'Url for authenticate not exist.', { focus: true });
+                            } else {
+                                if (window.parent) {
+                                    window.parent.top.location.href = r.Data.Url;
+                                } else {
+                                    window.top.location.href = r.Data.Url;
+                                }
+                            }
+                        }
                     }
                 }
             });
@@ -344,7 +366,7 @@
             return false;
         });
 
-        $('a.thunder-grid-paged', $grid).live('click', function (e) {
+        $('a.thunder-grid-paged', $grid).on('click', function (e) {
             var $this = $(this);
             if (!$this.is('.disabled')) {
                 paginate($this.data('page'));
@@ -352,7 +374,7 @@
             e.preventDefault();
         });
 
-        $('a.thunder-grid-order', $grid).live('click', function (e) {
+        $('a.thunder-grid-order', $grid).on('click', function (e) {
             var $this = $(this);
             if ($this.data('column') != 'undefined' && $this.data('asc') != 'undefined') {
                 $form.setOrders([{ 'Column': $this.data('column'), 'Asc': $this.data('asc')}]);
@@ -362,7 +384,7 @@
             e.preventDefault();
         });
 
-        $('select.thunder-grid-paged', $grid).live('change', function () {
+        $('select.thunder-grid-paged', $grid).on('change', function () {
             var $this = $(this);
             paginate($('option:selected', $this).val());
         });
@@ -386,7 +408,7 @@
         return this.each(function () {
             var $this = $(this);
 
-            $this.live('click', function (e) {
+            $this.on('click', function (e) {
                 $.extend(settings, {
                     iframe: ($this.data('iframe') != undefined ? $this.data('iframe') : settings.iframe),
                     iframeScroll: ($this.data('iframe-scroll') != undefined ? $this.data('iframe-scroll') : settings.iframeScroll),

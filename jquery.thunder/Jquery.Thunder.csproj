@@ -97,8 +97,8 @@
     <Content Include="Content\jquerythunder\images\loading_form.gif" />
     <Content Include="Content\jquerythunder\images\loading_modal.gif" />
     <Content Include="Content\jquerythunder\images\loading_grid.gif" />
-    <Content Include="Content\jquerythunder\jquery.thunder-1.1.5.css" />
-    <Content Include="Content\jquerythunder\jquery.thunder-1.1.5.min.css" />
+    <Content Include="Content\jquerythunder\jquery.thunder-1.1.8.css" />
+    <Content Include="Content\jquerythunder\jquery.thunder-1.1.8.min.css" />
     <Content Include="Content\jquerythunder\jquery.thunder.css" />
     <Content Include="Content\jquerythunder\images\attention.png" />
     <Content Include="Content\jquerythunder\images\close.png" />
@@ -135,11 +135,12 @@
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\jquery.thunder-1.1.5.min.js" />
-    <Content Include="Scripts\jquery.thunder-1.1.5.js" />
-    <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-1.8.3-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.8.3.js" />
+    <Content Include="Scripts\jquery-1.8.3.min.js" />
+    <Content Include="Scripts\jquery.thunder-1.1.8.js" />
     <Content Include="Scripts\jquery-ui-1.8.18.min.js" />
+    <Content Include="Scripts\jquery.thunder-1.1.8.min.js" />
     <Content Include="Scripts\jquery.thunder.js" />
     <Content Include="Content\prettify.css" />
     <Content Include="Scripts\prettify.js" />
