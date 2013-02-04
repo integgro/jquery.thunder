@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.1.9',
+        version: '1.2.0',
         images: {
             loadingModal: '/content/jquerythunder/images/loading_modal.gif',
             loadingGrid: '/content/jquerythunder/images/loading_grid.gif',
@@ -14,6 +14,99 @@
         alert: {
             label: { ok: 'OK' }
         }
+    };
+
+    $.thunder.resetDropDown = function (selector) {
+        var $selector = $(selector);
+        $('option', $selector).removeAttr('selected');
+        $('option:first', $selector).attr('selected', 'selected');
+    };
+
+    $.thunder.resetText = function (selector) {
+        $(selector).val('');
+    };
+
+    $.thunder.submitButton = function (button, form, options) {
+        var settings = $.extend({}, {
+            before: null
+        }, options);
+        var $button = $(button);
+        var $form = $(form);
+
+        $form.data('button', $button);
+
+        $button.click(function () {
+            if (settings.before) {
+                settings.before.call($form, $button);
+            } else {
+                $form.submit();
+            }
+        });
+
+        $('input[type="text"]', $form).keypress(function (e) {
+            if (e.keyCode == 13) {
+                $button.trigger('click');
+                e.preventDefault();
+            }
+        });
+    };
+
+    $.thunder.setReadOnly = function(elements) {
+        $.each(elements, function() {
+            var $element = $(this);
+            if ($element.is('a') || $element.is('input:button')) {
+                $element.remove();
+            } else {
+                if ($element.is('select')) {
+                    $element.attr('disabled', 'disabled');
+                } else {
+                    $element.attr('readonly', 'readonly');
+                    if ($element.is('.date')) {
+                        $element.unmask();
+                        $element.datepicker('destroy');
+                    }
+                }
+                $element.addClass('readonly');
+            }
+        });
+    };
+
+    $.thunder.delete = function(selector, options) {
+        var settings = $.extend({
+            success: function() {
+            },
+            noDeleteMessage: 'Registro não pode ser excluído, pois encontra-se relacionado com outra funcionalidade do sistema.'
+        }, options);
+
+        $(selector).live('click', function(e) {
+            var $this = $(this);
+
+            if ($this.data('delete')) {
+                $.confirm($this.data('message'), {
+                    onYes: function() {
+                        $.ajax({
+                            url: $this.attr('href'),
+                            type: 'delete',
+                            success: function(r) {
+                                if (r.Status == 200) {
+                                    settings.success.call($this, r);
+                                } else if (r.Status == 205) {
+                                    if (window.parent) {
+                                        window.parent.top.location.href = r.Data.Url;
+                                    } else {
+                                        window.top.location.href = r.Data.Url;
+                                    }
+                                }
+                            }
+                        });
+                    }
+                });
+            } else {
+                $.alert(settings.noDeleteMessage, { height: 140 });
+            }
+
+            e.preventDefault();
+        });
     };
 
     var methods = {
