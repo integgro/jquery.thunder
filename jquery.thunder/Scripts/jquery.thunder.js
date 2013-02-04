@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.2.0',
+        version: '1.2.1',
         images: {
             loadingModal: '/content/jquerythunder/images/loading_modal.gif',
             loadingGrid: '/content/jquerythunder/images/loading_grid.gif',
@@ -71,7 +71,7 @@
         });
     };
 
-    $.thunder.delete = function(selector, options) {
+    $.thunder.applyDelete = function(selector, options) {
         var settings = $.extend({
             success: function() {
             },
