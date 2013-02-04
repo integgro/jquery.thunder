@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.1.8',
+        version: '1.1.9',
         images: {
             loadingModal: '/content/jquerythunder/images/loading_modal.gif',
             loadingGrid: '/content/jquerythunder/images/loading_grid.gif',
@@ -181,7 +181,7 @@
             $message.message('error', 'Form action no exist.');
         }
 
-        $form.on('submit', function () {
+        $form.live('submit', function () {
             $message.hide();
 
             settings.onBeforeSubmit();
@@ -366,7 +366,7 @@
             return false;
         });
 
-        $('a.thunder-grid-paged', $grid).on('click', function (e) {
+        $('a.thunder-grid-paged', $grid).live('click', function (e) {
             var $this = $(this);
             if (!$this.is('.disabled')) {
                 paginate($this.data('page'));
@@ -374,7 +374,7 @@
             e.preventDefault();
         });
 
-        $('a.thunder-grid-order', $grid).on('click', function (e) {
+        $('a.thunder-grid-order', $grid).live('click', function (e) {
             var $this = $(this);
             if ($this.data('column') != 'undefined' && $this.data('asc') != 'undefined') {
                 $form.setOrders([{ 'Column': $this.data('column'), 'Asc': $this.data('asc')}]);
@@ -384,7 +384,7 @@
             e.preventDefault();
         });
 
-        $('select.thunder-grid-paged', $grid).on('change', function () {
+        $('select.thunder-grid-paged', $grid).live('change', function () {
             var $this = $(this);
             paginate($('option:selected', $this).val());
         });
@@ -408,7 +408,7 @@
         return this.each(function () {
             var $this = $(this);
 
-            $this.on('click', function (e) {
+            $this.live('click', function (e) {
                 $.extend(settings, {
                     iframe: ($this.data('iframe') != undefined ? $this.data('iframe') : settings.iframe),
                     iframeScroll: ($this.data('iframe-scroll') != undefined ? $this.data('iframe-scroll') : settings.iframeScroll),
@@ -526,7 +526,7 @@
                         });
 
                         if (settings.closeOnEscape == undefined || settings.closeOnEscape) {
-                            $iframe.contents().on('keydown', function (evt) {
+                            $iframe.contents().live('keydown', function (evt) {
                                 if (evt.keyCode === $.ui.keyCode.ESCAPE) {
                                     $modal.dialog('close');
                                 }
