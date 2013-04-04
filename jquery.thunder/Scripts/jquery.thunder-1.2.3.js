@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.2.2',
+        version: '1.2.3',
         images: {
             loadingModal: '/content/jquerythunder/images/loading_modal.gif',
             loadingGrid: '/content/jquerythunder/images/loading_grid.gif',
@@ -333,8 +333,9 @@
                             if ($(r).is('.thunder-notification')) {
                                 $message.html(r);
                                 if (settings.focus) {
-                                    $targetScroll.animate({ scrollTop: $message.offset().top }, 'slow', function () {
-                                        $message.slideDown();
+                                    $message.slideDown(function () {
+                                        $targetScroll.animate({ scrollTop: $message.offset().top - 20 }, 'slow', function () {
+                                        });
                                     });
                                 } else {
                                     $message.slideDown();
