@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.2.1',
+        version: '1.2.2',
         images: {
             loadingModal: '/content/jquerythunder/images/loading_modal.gif',
             loadingGrid: '/content/jquerythunder/images/loading_grid.gif',
@@ -51,8 +51,8 @@
         });
     };
 
-    $.thunder.setReadOnly = function(elements) {
-        $.each(elements, function() {
+    $.thunder.setReadOnly = function (elements) {
+        $.each(elements, function () {
             var $element = $(this);
             if ($element.is('a') || $element.is('input:button')) {
                 $element.remove();
@@ -71,23 +71,23 @@
         });
     };
 
-    $.thunder.applyDelete = function(selector, options) {
+    $.thunder.applyDelete = function (selector, options) {
         var settings = $.extend({
-            success: function() {
+            success: function () {
             },
             noDeleteMessage: 'Registro não pode ser excluído, pois encontra-se relacionado com outra funcionalidade do sistema.'
         }, options);
 
-        $(selector).live('click', function(e) {
+        $(selector).live('click', function (e) {
             var $this = $(this);
 
             if ($this.data('delete')) {
                 $.confirm($this.data('message'), {
-                    onYes: function() {
+                    onYes: function () {
                         $.ajax({
                             url: $this.attr('href'),
                             type: 'delete',
-                            success: function(r) {
+                            success: function (r) {
                                 if (r.Status == 200) {
                                     settings.success.call($this, r);
                                 } else if (r.Status == 205) {
@@ -333,7 +333,7 @@
                             if ($(r).is('.thunder-notification')) {
                                 $message.html(r);
                                 if (settings.focus) {
-                                    $targetScroll.animate({ scrollTop: 0 }, 'slow', function () {
+                                    $targetScroll.animate({ scrollTop: $message.offset().top }, 'slow', function () {
                                         $message.slideDown();
                                     });
                                 } else {

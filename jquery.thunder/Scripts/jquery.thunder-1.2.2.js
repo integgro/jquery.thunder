@@ -2,7 +2,7 @@
     $.thunder = {};
 
     $.thunder.settings = {
-        version: '1.2.1',
+        version: '1.2.2',
         images: {
             loadingModal: '/content/jquerythunder/images/loading_modal.gif',
             loadingGrid: '/content/jquerythunder/images/loading_grid.gif',
@@ -333,7 +333,7 @@
                             if ($(r).is('.thunder-notification')) {
                                 $message.html(r);
                                 if (settings.focus) {
-                                    $targetScroll.animate({ scrollTop: 0 }, 'slow', function () {
+                                    $targetScroll.animate({ scrollTop: $message.offset().top }, 'slow', function () {
                                         $message.slideDown();
                                     });
                                 } else {
